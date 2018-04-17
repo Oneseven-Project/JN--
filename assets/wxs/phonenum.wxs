@@ -1,0 +1,14 @@
+var phone = function changePhone(num) {
+  if (typeof num == 'number') {
+    num = num.toString()
+  } else if (typeof num == 'string' && num.length >= 11) {
+    var arr = num.split('')
+    arr.splice(3, 4, '****').join('')
+    return arr.join('')
+  } else {
+    return num
+  } 
+}
+module.exports = {
+  phone: phone
+}

@@ -1,0 +1,74 @@
+<!--pages/my/my.wxml-->
+<wxs src="../../assets/wxs/style.wxs" module="style" />
+<view class='my'>
+  <view class='my-info'>
+    <image src='../../assets/imgs/myBg.png' class='my-info-bg'></image>
+    <block wx:if="{{userInfo}}">
+      <view class='my-info-avatar' >
+        <image src='{{userInfo.head_portrait ? userInfo.head_portrait : "../.../assets/imgs/Avatar.png"}}' class='my-info-avatarimg' binderror="bindErrImg"></image>
+        <view class='my-info-mobile'>{{userInfo.nick_name}}</view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='my-info-avatar' >
+          <button class='my-info-imgbtn' bindtap='goLogin'>
+            <image src='../../assets/imgs/Avatar.png' class='my-info-avatarimg'></image>
+          </button>
+          <view class='my-infn-loginBtn' bindtap='goLogin'>
+            登录 / 注册
+            <!-- <button bindtap='goLogin' class="my-infn-loginBtn"></button> -->
+          </view>
+      </view>
+    </block>
+  </view>
+  <view class='my-order-list'>
+    <view class='my-order-left jn-1px-b'>我的订单</view>
+    <view class='my-order-right jn-1px-b' bindtap='toOrders' data-index='{{3}}'>
+      <text class='my-order-more'>查看全部订单</text>
+      <text class='iconfont icon-Arrow'></text>
+    </view>
+  </view>
+  <view class='my-info-orders'>
+    <block wx:for="{{orders}}" wx:key="index" wx:for-index="index" wx:for-item="order">
+      <view class='my-info-orders-tatus' bindtap='toOrders' data-index='{{index}}'>
+        <view class='my-info-status-icon'>
+          <image src='{{order.icon}}' mode='widthFix' class='my-orders-imgicon'></image>
+          <view class='orders-status-num' wx:if="{{order.num > 0}}">{{order.num}}</view>
+        </view>
+        <view class='my-info-status-text'>{{order.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class='my-servers'>
+    <!-- <view class='my-servers-header jn-1px-b'>我的服务</view> -->
+    <view class='my-servers-box'>
+      <block wx:for="{{servers}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
+        <view class='my-servers-item' bindtap='toServer' data-index='{{idx}}'>
+          <view class='my-servers-icon'>
+            <image src='{{item.icon}}' mode='widthFix' class='my-orders-imgicon'></image>
+          </view>
+          <view class='my-servers-text'>{{item.name}}</view>
+        </view>
+      </block>
+      <view class='my-1px-box'>
+        <view class='jn-1px-b'></view>
+      </view>
+    </view>
+    <view class='my-servers-box'>
+      <block wx:for="{{servers2}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
+        <view class='my-servers-item' bindtap='toServer2' data-index='{{idx}}'>
+          <view class='my-servers-icon'>
+            <image src='{{item.icon}}' mode='widthFix' class='my-orders-imgicon'></image>
+          </view>
+          <view class='my-servers-text'>{{item.name}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='myad'>
+    <jn-banner item="{{bannerItem}}" style="{{style.flex(bannerItem.col)}}"></jn-banner>
+  </view>
+
+</view>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

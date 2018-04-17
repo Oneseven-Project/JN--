@@ -1,0 +1,4 @@
+/* widget/couponlist/couponlist.wxss */
+.jn-coupon-list{
+  width: 100%;
+}

@@ -1,0 +1,30 @@
+<!--template.js.wxml-->
+<wxs src="../../assets/wxs/style.wxs" module="style" />
+
+<jn-banner wx:if="{{item.module === 'banner'}}" item="{{item}}" style="{{style.flex(item.col)}}"></jn-banner>
+
+<jn-showcase wx:elif="{{item.module === 'showcase'}}" item="{{item}}" style="{{style.flex(item.col)}}"></jn-showcase>
+
+<jn-icon class='jn-icon' wx:elif="{{item.module === 'icon'}}" item="{{item}}" style="{{style.flex(item.col)}}"></jn-icon>
+
+<jn-goodlist class="jn-goodlist" wx:elif="{{item.module === 'goods'}}" tempData="{{tempData}}" item="{{item}}" style="{{style.flex(item.col)}}"></jn-goodlist>
+
+<jn-timer class="jn-timer" wx:elif="{{item.module === 'timer'}}" item="{{item}}" style="{{style.flex(item.col)}}"></jn-timer>
+
+<jn-swiper class="jn-swiper" wx:elif="{{item.module === 'swiper-md' || item.module === 'swiper-sm'}}" item="{{item}}" tempData="{{tempData}}"  countTime="{{countTime}}" style="{{style.flex(item.col)}}"></jn-swiper>
+
+<jn-top-nav class="jn-topnav" wx:elif="{{item.module === 'top-nav'}}" item="{{item}}" tempData="{{tempData}}" style="{{style.flex(item.col)}}"></jn-top-nav>
+
+<jn-tab class="jn-tab" wx:elif="{{item.module === 'tab'}}" item="{{item}}" tempData="{{tempData}}" style="{{style.flex(item.col)}}"></jn-tab>
+
+<jn-store class="jn-store" wx:elif="{{item.module === 'store'}}" item="{{item}}" tempData="{{tempData}}"></jn-store> 
+
+<jn-repacket class="jn-repacket" wx:elif="{{item.module === 'coupon'}}" item="{{item}}" tempData="{{tempData}}"></jn-repacket>
+
+<jn-coupon-list class="jn-coupon-list" wx:elif="{{item.module === 'couponlist'}}" item="{{item}}" tempData="{{tempData}}" style="{{style.flex(item.col)}}"></jn-coupon-list>
+
+<block wx:else>
+  <block wx:for="{{item.child}}" wx:for-item="child" wx:for-index="idx" wx:key="{{idx}}">
+    <jn-template class="jn-template" item="{{child}}" tempData="{{tempData}}" countTime="{{countTime}}" style="{{style.flex(child.col)}}"></jn-template>
+  </block>
+</block> 

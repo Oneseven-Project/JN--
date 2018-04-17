@@ -1,0 +1,36 @@
+<template name="goodlist_style2">
+  <wxs src="../../assets/wxs/price.wxs" module="price" />
+  <view class="goodlist-two">
+      <block wx:for="{{goodlist}}" wx:key="idx" wx:for-index="idx" wx:for-item="goods">
+        <view class='goodlist2-item' bindtap='goDetail' data-item='{{goods}}'>
+          <view class='goodlist2-item-imgsBox'>
+            <image class='goodlist2-item-img' src='{{goods.diy.picType == 1 ? (goods.diy.pic ? goods.diy.pic : "../../assets/imgs/fruit.jpg") : (goods.sku_img ? goods.sku_img : "../../assets/imgs/fruit.jpg")}}' lazy-load binderror="bindErrImg" data-imgIndex="{{idx}}"></image>
+            <view class='goodlist2-item-activity' wx:if="{{false}}">限购</view>
+            <view class='goodlist2-item-saleOut' wx:if="{{goods.leaving_stock == 0}}">
+              <view class='goodlist2-item-saleOut-textCN'>已售完</view>
+              <view class='goodlist2-item-saleOut-textEN'>SALD OUT</view>
+            </view>
+          </view>
+
+          <view class='goodlist2-item-title' wx:if="{{goods.sku_name}}">{{goods.sku_name}}</view>
+          <view class='goodlist2-item-title' wx:elif="{{!goods.sku_name}}">{{goods.diy.title}}</view>
+
+          <view class='goodlist2-item-subTitle'>{{goods.sku_brief}}</view>
+          <view class="goodlist2-item-priceBox">
+            <text class='money-tag'>￥</text>
+            <text class='goodlist2-item-price'>{{price.priceFix(goods.sale_price).intNum}}</text>
+            <text class='money-tag'>.{{price.priceFix(goods.sale_price).floatNum}}</text>
+            <text class='goodlist2-item-originprice'>￥{{price.priceFix(goods.purchase_price).allNum}}</text>
+            <view class='goodlist2-cart-add'>
+              <text class='iconfont icon-Raido_Disable good-item-btn' catchtap='cartAdd' data-item='{{goods}}'>
+                <text class='iconfont icon-Plus good-item-btnPlus'></text>
+              </text>
+              <text class='iconfont icon-Raido_Disable good-item-btnDisable' wx:if="{{false}}">
+                <text class='iconfont icon-Plus good-item-btnPlus-disable'></text>
+              </text>
+            </view>
+          </view>
+        </view>
+      </block>  
+  </view>
+</template>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "jn-toast": "/widget/toast/toast",
+    "jn-err": "/widget/error/error"
+  }
+}

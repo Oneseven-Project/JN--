@@ -1,0 +1,12 @@
+<!--widget/tab/tab.wxml-->
+<view class='tabs'>
+   <scroll-view class="tabs-scroll" scroll-x scroll-with-animation scroll-into-view="{{toView}}">
+   <block wx:for="{{tabs}}" wx:key="item" wx:for-item="tabItem">
+      <view id="tab{{index}}" class='tabs-tabItem {{activatedIdx== index ? "activatedTab" : ""}}' data-item='{{tabItem}}' data-index='{{index}}' bindtap="goTab">
+        <text class='tab-text'>{{tabItem.title}}</text>
+        <view class='tabs-item-active' style="width:{{tabItem.title.length+1}}em" wx:if="{{activatedIdx== index}}"></view>
+      </view>
+  </block>
+  </scroll-view>
+  <view class='tab-1px'></view>
+</view>

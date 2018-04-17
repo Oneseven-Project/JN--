@@ -1,0 +1,39 @@
+<!--pages/use_redpacket/use_redpacket.wxml-->
+  <view class='redpacket-list'>
+    <block wx:if="{{!noList}}">
+      <view class='redpacket-list-item' wx:for="{{redList}}" wx:for-index="index" wx:for-item="redBag" wx:key="index" bindtap='checkCoupon' data-coupon='{{redBag}}'>
+        <view class='redpacket-bgimg'>
+          <image src='../../assets/imgs/redCanUse.png' class='redpacket-bgimg-img'></image>
+        </view>
+        <view class='list-item-content'>
+          <view class='item-content-left'>
+            <view class='item-red-conunt'>
+              <text class='item-red-icon'>￥</text> 
+              <text class='item-red-num'>{{redBag.couponAmt}}</text>
+            </view>
+          </view>
+          <view class='item-content-center'>
+            <view class='red-text-desc-title'>{{redBag.couponName}}</view>
+            <view class='red-text-desc'>满{{redBag.applicableAmt}}元可用</view>
+            <view class='red-text-desc'>{{redBag.couponDesc}}</view>
+          </view>
+          <view class='item-content-right'>
+            <view class='item-check-box'>
+              <text class='iconfont icon-Radio_Selected checkbox-selected' wx:if="{{redBag.isSelected}}"></text>
+              <text class='iconfont icon-Raido_Normal checkbox-noSelected' wx:if="{{!redBag.isSelected}}"></text>
+              <!-- <text class='iconfont icon-Raido_Disable checkbox-disable' wx:if="{{all_disable}}"></text> -->
+            </view>
+          </view>
+        </view>
+        <view class='list-item-foot'>
+          <text>有效期至{{redBag.applicableTo}}</text>
+        </view>
+      </view>
+    </block>
+    <!-- 没有红包 -->
+    <view class='no-redpacket' wx:if="{{noList}}">
+       <image src='../../assets/imgs/no-redpacket.png' class='no-redpacket-img'></image> 
+      <view class='no-redpacket-text'>你还没有可用红包哦</view>
+      <view class='back-home-btn' bindtap='toHome'>回首页</view>
+    </view>
+  </view>

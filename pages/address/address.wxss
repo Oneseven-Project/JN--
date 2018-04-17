@@ -1,0 +1,114 @@
+/* pages/address/address.wxss */
+.jn-address{
+  background: #fafafa;
+  position: relative;
+  padding-bottom: 130rpx;
+  min-height: calc(100vh - 130rpx);
+}
+.address-bg-white{
+  background: #fff;
+}
+.address-info{
+  margin-bottom: 20rpx;
+  padding: 24rpx 0 0 40rpx;
+  background: #fff;
+}
+.address-head{
+  padding-right: 40rpx;
+}
+.address-head-man{
+  color: #332500;
+  font-size: 26rpx;
+}
+.address-head-cellphone{
+  color: #332500;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.address-desc{
+  color: #999;
+  font-size: 24rpx;
+  line-height: 34rpx;
+  padding: 10rpx 40rpx 10rpx 0;
+}
+.address-foot{
+  height: 85rpx;
+  line-height: 85rpx;
+  display: flex;
+  flex-direction: row;
+}
+.address-foot-left{
+  flex: 0.5;
+}
+.address-checkbox{
+  font-size: 24rpx;
+  color: #332500;
+}
+.address-foot-right{
+  flex: 0.5;
+  text-align: right;
+  padding-right: 40rpx;
+  font-size: 24rpx;
+  color: #332500;
+}
+.address-edit{
+  margin-left: 10rpx;
+  margin-right:40rpx; 
+}
+.address-del{
+  margin-left: 10rpx;
+}
+.jn-address-footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 130rpx;
+  z-index: 12;
+  background: #fff;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+.jn-address-footer-btn{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #FF9C2B;
+  border-radius: 8rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+/* 没有收货地址 */
+.no-address-box{
+  position: absolute;
+  left: 50%;
+  top: 200rpx;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.no-address-img{
+  width: 260rpx;
+  height: 260rpx;
+}
+.no-address-text{
+  font-size: 32rpx;
+  color: #332500;
+  text-align: center;
+}
+.back-home-btn{
+  width: 176rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  border-radius: 100rpx;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  color: #332500;
+  background: #fff;
+}
+.back-home-btn::after{
+  border-radius: 100rpx;
+}

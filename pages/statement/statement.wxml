@@ -1,0 +1,58 @@
+<!--pages/statement/statement.wxml-->
+<wxs src="../../assets/wxs/phonenum.wxs" module="phone" />
+<import src="goodlist.wxml"/>
+<view class='statement'>
+  <view class='statement-adress jn-1px-b-t'>
+    <block wx:if="{{AddressInfo.name}}">
+      <view class='statement-adress-info' bindtap='chooseAdrees'>
+        <view class='statement-adress-name'>
+          <image class='statement-adress-icon' src='../../assets/imgs/Loaction2424.png'></image> 
+          <text class='statement-adress-man'>{{AddressInfo.name}}</text>
+          <text class='statement-adress-cellphone'>{{phone.phone(AddressInfo.phone)}}</text>
+        </view>
+        <view class='statement-adress-desc'>{{AddressInfo.full_addr}}</view>
+      </view>
+    </block> 
+    <block wx:else> 
+      <view class='statement-adress-info' bindtap='addAdrees'>
+        <view class='statement-adress-name'>
+          <image class='statement-adress-icon' src='../../assets/imgs/Loaction2424.png'></image>
+          <text class='statement-adress-man'>添加地址</text>
+        </view>
+      </view>
+    </block> 
+    <view class='statement-adress-go'>
+      <text class='iconfont icon-Arrow'></text>
+    </view>
+  </view>
+  <!-- 商品列表  -->
+  <template is="statement-goodlist" data="{{goodList}}"/>
+  
+  <!-- 合计  -->
+  <view class='statement-total'>
+    <view class='statement-total-list jn-1px-b'>
+      <view class='statement-total-left'>商品合计</view>
+      <view class='statement-total-right'>￥{{product_sa}}</view>
+    </view>
+    <view class='statement-total-list jn-1px-b' bindtap='chooseRedBag'>
+      <view class='statement-total-left'>红包</view>
+      <view class="statement-total-right {{coupons.length == 0 ? 'fontgray' : ''}}">{{coupons.length ? currentCoupons.couponAmt ? '-￥' + currentCoupons.couponAmt : '有个'+ coupons.length +'红包可用' : '暂无可用红包'}}</view>
+    </view>
+    <view class='statement-total-list'>
+      <view class='statement-total-left'>运费</view>
+      <view class='statement-total-right'>￥{{shipment_fee}}</view>
+    </view>
+    
+  </view>
+
+  <view class='statement-footer jn-1px-t'>
+    <view class='statement-footer-left'>
+      <text class='statement-footer-needpay'>应付金额</text>
+      <text class='statement-footer-pay-icon'>￥</text>
+      <text class='statement-footer-pay'>{{payable_amt}}</text>
+    </view>
+    <view class='statement-footer-right' bindtap='checkAndPay'>微信支付</view>
+  </view>
+</view>
+<jn-model bindtouchmove catchtouchmove="handleStart" bind:getCartList='getCarList' class="jn-model" option="{{modelOption}}"></jn-model>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

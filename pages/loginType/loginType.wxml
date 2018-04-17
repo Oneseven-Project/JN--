@@ -1,0 +1,12 @@
+<!--pages/loginType/loginType.wxml-->
+<image class='login-bg' src='../../assets/imgs/banner.png'></image>
+<view class='loginType-btns'>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="loginType-btns-wx" wx:if="{{isGetUser}}">微信用户快速登录</button>
+  <button class="loginType-btns-wx" wx:else bindtap='getUser'>微信用户快速登录</button>
+  <button bindtap='toLogin' class='loginType-btns-phone'>手机号验证快速登录</button>
+</view>
+<view class='login-tip'>
+<text>首次用手机号登录将为您注册。登录则表示您同意</text>
+<text class='login-tip-text' bindtap='goTerms'>《江楠生鲜服务条款》</text>
+</view>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

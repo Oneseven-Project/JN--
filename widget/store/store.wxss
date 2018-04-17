@@ -1,0 +1,89 @@
+/* widget/store/store.wxss */
+@import "/assets/style/1px.wxss";
+.jn-modle-store{
+  width: 100vw;
+  position: relative;
+}
+.jn-shop{
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.jn-shop-head{
+  padding: 40rpx 40rpx 30rpx 40rpx; 
+  box-sizing: border-box;
+  display: table;
+  width: 100%;
+}
+.jn-shop-head-left{
+  display: table-cell;
+  vertical-align: middle;
+  max-width: 460rpx;
+}
+.jn-shop-title{
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #332500;
+}
+.jn-shop-subtitle{
+  color: #999;
+  font-size: 24rpx;
+}
+.jn-shop-show-more{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  font-size: 28rpx;
+  color: #999;
+}
+.jn-shop-imgbox{
+  width: 670rpx;
+  height: 200rpx;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 8rpx;
+}
+.jn-shop-img{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border-radius: 8rpx;
+  transform: translateY(-50%);
+}
+.jn-shop-text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.jn-shop-store-name{
+  width: 15em;
+  color: #fff;
+  font-size: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.jn-shop-adree{
+  color: #fff;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.jn-shop-mask{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: rgba(85, 45, 0, 0.7); 
+}
+.jn-shop-list{
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+}

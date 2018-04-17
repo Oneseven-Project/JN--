@@ -1,0 +1,29 @@
+<!--widget/store/store.wxml-->
+<wxs src="../../assets/wxs/style.wxs" module="style" />
+<view class='jn-modle-store'>
+  <block wx:for="{{storeList}}" wx:key="idx" wx:for-index="idx" wx:for-item="storeItem">
+    <view style='width:100%; padding:0 40rpx; box-sizing: border-box;'>
+      <view class='jn-1px-t'></view>
+    </view>
+    <view class='jn-shop'>
+      <view class='jn-shop-head'>
+        <view class='jn-shop-head-left'>
+          <view class='jn-shop-title'>{{storeItem.seller_name}}</view>
+          <view class='jn-shop-subtitle'>{{storeItem.description}}</view>
+        </view>
+        <view class='jn-shop-show-more' bindtap='inToStore' data-item='{{storeItem}}'>进入店铺</view>
+      </view>
+      <view class='jn-shop-imgbox' bindtap='inToStore' data-item='{{storeItem}}'>
+        <image src='{{storeItem.seller_image}}' class='jn-shop-img' mode='aspectFill'></image>
+        <view class='jn-shop-mask'></view>
+        <view class='jn-shop-text'>
+          <view class='jn-shop-store-name'>{{storeItem.seller_name}}</view>
+          <view class='jn-shop-adree'>{{storeItem.address}}</view>
+        </view>
+      </view>
+      <view class='jn-shop-list'>
+        <jn-swiper tempData="{{storeItem.skus}}" style="{{style.flex(child.col)}}"></jn-swiper>
+      </view>
+    </view>
+  </block>
+</view>

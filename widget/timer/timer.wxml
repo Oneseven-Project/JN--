@@ -1,0 +1,5 @@
+<!--widget/timer/timer.wxml-->
+<wxs src="../../assets/wxs/style.wxs" module="style" />
+<view class='jn-timer'>
+  <jn-template class="jn-template" item="{{tempConf}}" tempData="{{tempData}}" countTime="{{countTime}}" style="{{style.flex(child.col)}}"></jn-template>  
+</view>

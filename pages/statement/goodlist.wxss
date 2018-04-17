@@ -1,0 +1,135 @@
+.goods-list-model{
+  position: relative;
+}
+.goodlist-container{
+  position: relative;
+  width: 100%;
+  background: #fff;
+  margin-top: 20rpx;
+}
+.goodlist-head{
+  color: #332500;
+  font-weight: 600;
+  font-size: 28rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+.goodlist-goods{
+  position: relative;
+  padding-left: 40rpx;
+}
+.goolist-goods-container{
+  width: 100%;
+  display: table;
+  padding: 40rpx 0;
+}
+.goodlist-goods-imgbox{
+  display: table-cell;
+  vertical-align: middle;
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+}
+.goodlist-goods-img{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.goodlist-good-info{
+  display: table-cell;
+  vertical-align: middle;
+  max-width: 520rpx;
+  padding-right: 40rpx;
+  margin-left: 30rpx;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+.good-title{
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+  color: #332500;
+}
+.good-desc{
+  width: 100%;
+  font-size: 24rpx;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.good-price-num{
+  width: 100%;
+  display: flex;
+}
+.good-price{
+  flex: 0.5;
+  font-size: 28rpx;
+  color: #FF9C2B;
+}
+.good-num{
+  flex: 0.5;
+  font-size: 28rpx;
+  color: #332500;
+  text-align: right;
+}
+/* 取货方式  */
+.goodlist-receiving{
+  padding: 0 40rpx;
+  background: #fff;
+}
+.has-padding{
+ padding-bottom: 30rpx; 
+}
+
+.goodlist-receiving-type{
+  height: 96rpx;
+  line-height: 96rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  color: #332500;
+}
+.goodlist-receiving-fastMail{
+  flex: 1;
+}
+.goodlist-receiving-takeTheir{
+  flex: 1;
+}
+.checkbox-selected{
+  font-size: 36rpx;
+  color: #FF9C2B;
+}
+.goodlist-receiving-type-text{
+  margin-left: 10rpx;
+}
+.checkbox-noSelected{
+  font-size: 36rpx;
+  color: #999;
+}
+.goodlist-receiving-address{
+  padding: 30rpx;
+  background: #f2f2f2;
+  font-size: 28rpx;
+  color: #332500;
+  border-radius: 6rpx;
+  position: relative;
+}
+.goodlist-receiving-address::after{
+  content: '';
+  position: absolute;
+  right: 120rpx;
+  top: -12rpx;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 8px solid #f2f2f2;
+}

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "jn-template": "/widget/template/template",
+    "jn-tab": "/widget/tab/tab",
+    "jn-swiper": "/widget/swiper/swiper",
+    "jn-toast": "/widget/toast/toast"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 0
+}

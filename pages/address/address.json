@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "jn-toast": "/widget/toast/toast"
+  },
+  "navigationBarTitleText": "收货地址"
+}

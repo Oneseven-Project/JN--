@@ -1,0 +1,88 @@
+<!--pages/orders/orders.wxml-->
+
+<view class='orders-tabs jn-1px-b'>
+  <block wx:for="{{ordersTabs}}" wx:key="index" wx:for-index="index" wx:for-item="tab">
+    <view class='orders-tab-item {{activatedIndex == index ? "activated-tab" : ""}}' bindtap='tabClick' data-index='{{index}}'>
+        <text class='orders-tab-text'>{{tab}}</text>
+        <view class='activated-tab-item' wx:if="{{activatedIndex == index}}"></view>
+    </view>
+  </block>
+</view>
+<view class='orders-page' wx:if="{{orderlist.length > 0}}">
+  <view class='orders-list {{activatedIndex == 1 ? "orders-page-hasfoot" : ""}}'>
+     <block wx:for="{{orderlist}}" wx:key="idx" wx:for-index="idx" wx:for-item="order">
+        <view class='orders-item'>
+          <view class="order-item-header jn-1px-b">
+            <view class='order-checkbox' wx:if="{{activatedIndex == 1 && order.order_status == 10}}">
+              <text class='iconfont icon-Radio_Selected checkbox-selected' wx:if="{{order.is_select}}" bindtap='bindCheckbox' data-item='{{order}}'></text>
+              <text class='iconfont icon-Raido_Normal checkbox-noSelected' wx:else bindtap='bindCheckbox' data-item='{{order}}'></text>
+            </view>
+            <view class='oder-item-left'>订单编号： {{order.order_sn}}</view>
+            <view class='oder-item-right {{order.order_status == 10 ? "order-item-redText":""}}'>{{order.order_status_desc}}</view>
+          </view>
+          <view class='orders-containt' bindtap='toDetail' data-item='{{order}}'>
+            <block wx:if="{{order.goods.length == 1}}">
+              <view class='orders-good jn-1px-b'>
+                <view class='orders-good-imgbox'>
+                   <image src='{{order.goods[0].sku_img ? order.goods[0].sku_img : ".../../assets/imgs/fruit.jpg"}}' class='orders-good-img' lazy-load='{{true}}'></image> 
+                </view>
+                <view class='order-good-info'>
+                  <view class='order-good-title'>{{order.goods[0].product_name}}</view>
+                  <view class='order-good-num-price'>
+                    <view class='order-good-price'>￥{{order.goods[0].sale_price}}</view>
+                    <view class='order-good-num'>
+                      <text class='order-good-num-icon'>×</text>
+                      <text>{{order.goods[0].quantity}}</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </block>
+            <block wx:else>
+              <scroll-view class="jn-order-scroll jn-1px-b" scroll-x>
+                <view class="order-swiper-wrap"> 
+                  <block wx:for="{{order.goods}}" wx:key="index" wx:for-index="index" wx:for-item="good">
+                    <view class="orders-swiper-item" bindtap='itemClick' data-item="{{good}}"> 
+                      <image src='{{good.sku_img ? good.sku_img : "../../assets/imgs/fruit.jpg" }}' class='orders-item-Img' lazy-load="{{true}}"></image>
+                    </view> 
+                  </block>
+                </view> 
+              </scroll-view>
+            </block>
+          </view>
+          <view class='orders-footer'>
+            <view class='orders-num-total'>
+              <text class='orders-good-tatal'>共{{order.product_count}}件</text>
+              <text class='orders-good-total-text'>实付:</text>
+              <text class='orders-good-total-money'>￥{{order.payable_amt}}</text>
+            </view>
+            <view class='orders-btns' wx:if="{{order.can_pay }}">
+              <view class='orders-btns-left'> </view>
+              <view class='orders-btns-btn' catchtap='PayOrder' data-order='{{order}}'>
+                <text>去付款</text>        <!--   order.cancel_time -->
+                <!-- <count-dowm isDown="{{1}}" time="{{order.cancel_time}}" class="orders-btns-leftime" bind:refresh="timeOut"></count-dowm>  -->
+              </view>
+            </view>
+            <view class='orders-btns' wx:if="{{order.can_receive}}">
+              <view class='orders-btns-left'> </view>
+              <view class='orders-btns-btn' catchtap='signFor' data-order='{{order}}'>签收</view>
+            </view>
+          </view>
+        </view>
+     </block>
+     <view class='order-list-nomore' wx:if="{{noMore}}">没有更多了</view>
+  </view>
+</view>
+<view class='orderslist-empty' wx:else>
+    <image class='orderslist-noorder-img' src='../../assets/imgs/noOrders.png'></image>
+    <view class='orderslist-noorder-text'>暂无相关订单</view>
+    <navigator url="/pages/index/index" open-type="switchTab">
+     <button class='err-btn'>返回首页</button> 
+    </navigator>
+</view>
+
+<view class='footer-btns' wx:if="{{activatedIndex == 1 && orderlist.length >= 2}}">
+  <view class='pay-togeter' bindtap='payTogeter'>合并支付</view>
+</view>
+
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

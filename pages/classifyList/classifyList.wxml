@@ -1,0 +1,20 @@
+<view class='classify-list-tabs' wx:if="{{goodlist && goodlist.length > 0}}">
+  <scroll-view class="classify-list-scroll" scroll-x scroll-with-animation scroll-into-view="{{toView}}">
+  <block wx:for="{{listTabs}}" wx:key="item" wx:for-item="tabItem">
+      <view id="tab{{index}}" class='classify-list-tabItem {{activatedIdx== index ? "activatedTab" : ""}}' data-item='{{tabItem}}' data-index='{{index}}' bindtap="tabClick">
+        <text>{{tabItem.label}}</text>
+        <view class='classify-item-active' style="width:{{tabItem.label.length}}em" wx:if="{{activatedIdx== index}}"></view>
+      </view>
+  </block>
+  </scroll-view>
+</view>
+ <view class='classify-list {{goodlist && goodlist.length > 0 ? "" : "hadpadding"}}'>
+    <block wx:if="{{goodlist && goodlist.length > 0}}">
+      <jn-goodlist goodlist="{{goodlist}}"></jn-goodlist>
+    </block>
+    <block wx:if="{{isError}}">
+    <!-- <view class='classify-list-nodata'>暂无数据</view>  -->
+      <jn-err></jn-err>
+    </block>
+    <jn-toast class="toast" text="{{toastText}}" ></jn-toast>
+ </view>

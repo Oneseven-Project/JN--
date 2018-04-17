@@ -1,0 +1,55 @@
+<!--pages/cart/cart.wxml-->
+<import src="cartlist.wxml"/>
+<view class='cart {{cartList.length > 0 ? "" : "cart-no-good"}}'>
+  <view class='cart-location'>
+    <view class="cart-location-contenter" bindtap='location' bindtap='toChooseCity'>
+      <image src='../../assets/imgs/Loaction2424.png' class='cart-loaction-icon'></image>
+      <text class='cart-location-text'>{{address}}</text>
+    </view>
+    <view class='location-contenter-right'>
+      <image src='../../assets/imgs/Triangle.png' class='home-loaction-tangle' style='width:14rpx;height:10rpx'></image>
+    </view>
+  </view> 
+  <view class='cart-carlist' wx:if="{{cartList.length > 0}}">
+    <block wx:for="{{cartList}}" wx:key="idx" wx:for-index="idx" wx:for-item="listInfo">
+      <template is="cart_list" data="{{listInfo: listInfo, cartIndex: idx}}"/>
+    </block>
+  </view>
+  <!-- 页脚部分 -->
+  <view class='cart-footer jn-1px-t' wx:if="{{cartList.length > 0}}">
+    <view class='cart-footer-left'>
+      <view class='cart-footer-checkbox'>
+          <text class='iconfont icon-Radio_Selected checkbox-selected' wx:if="{{all_select && !all_disable}}" bindtap='allCheck' data-item="{{good}}"></text>
+        <text class='iconfont icon-Raido_Normal checkbox-noSelected' wx:elif="{{!all_select && !all_disable}}" bindtap='allCheck' data-item="{{good}}"></text>
+        <text class='iconfont icon-Raido_Disable checkbox-disable' wx:if="{{all_disable}}"></text>
+        <text class='cart-footer-hadchoose'>全选</text>
+      </view>
+      <view class='cart-footer-total'>
+        <text class='cart-footer-total-text'>合计</text>
+        <text class='cart-footer-money-icon {{total > 0 ? "" : "total_text_gray"}}'>￥</text>
+        <text class='cart-footer-money-total {{total > 0 ? "" : "total_text_gray"}}'>{{total}}</text>
+      </view>
+    </view>
+    <view class='cart-footer-right {{all_select || total > 0 ? "orange": "gray"}}' bindtap='clearing' >
+      <text class='cart-footer-account'>去结算</text>
+      <text class='cart-footer-account' wx:if="{{totalNum > 0}}">({{totalNum}})</text>
+    </view>
+  </view>
+  <view class='cart-no-goods-box' wx:if="{{isError}}">
+    <image src='../../assets/imgs/nogoods.png' class='cart-no-goods-img'></image>
+    <view class='no-good-text'>购物车还没有好吃的，快去逛逛吧！</view>
+    <navigator url="../../pages/index/index" open-type="switchTab" class='back-home-navigator'>
+      <button class='back-home-btn'>返回首页</button>
+    </navigator>
+  </view>
+  <view class='cart-no-goods-box' wx:if="{{noLogin}}">
+    <image src='../../assets/imgs/nogoods.png' class='cart-no-goods-img'></image>
+    <view class='no-good-text'>您还没有登录，赶快去登录吧！</view>
+    <navigator url="../../pages/loginType/loginType" class='back-home-navigator'>
+      <button class='back-home-btn'>去登录</button>
+    </navigator>
+  </view>
+
+</view>
+<jn-model bindtouchmove catchtouchmove="handleStart" bind:getCartList='getCarList' class="jn-model" option="{{modelOption}}" addressInfo="{{addressInfo}}"></jn-model>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

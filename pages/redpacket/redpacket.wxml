@@ -1,0 +1,44 @@
+<!--pages/redpacket/redpacket.wxml-->
+  <view class='redpacket-tab jn-1px-b'>
+    <block wx:for="{{tabList}}" wx:for-index="index" wx:for-item="tab" wx:key="index">
+      <view class='redpacket-tab-item {{activatIndex == index ? "activatedItem": ""}}' bindtap='tabClick' data-index='{{index}}'>
+        {{tab.name}}
+        <view class='activaed-item' wx:if="{{activatIndex == index}}"></view>
+      </view>
+    </block>
+  </view>
+  <view class='redpacket-list'>
+    <block wx:if="{{redList.length}}">
+      <view class='redpacket-list-item' wx:for="{{redList}}" wx:for-index="index" wx:for-item="redBag" wx:key="index">
+        <view class='redpacket-bgimg'>
+          <image src='{{redBgImg}}' class='redpacket-bgimg-img'></image>
+        </view>
+        <view class='list-item-content'>
+          <view class='item-content-left'>
+            <view class='item-red-conunt'>
+              <text class='item-red-icon {{activatIndex != 0 ? "color-gray" : ""}}'>￥</text> 
+              <text class='item-red-num {{activatIndex != 0 ? "color-gray" : ""}}'>{{redBag.couponAmt}}</text>
+            </view>
+          </view>
+          <view class='item-content-center'>
+            <view class='red-text-desc-title {{activatIndex != 0 ? "color-gray" : ""}}'>{{redBag.couponName}}</view>
+            <view class='red-text-desc {{activatIndex != 0 ? "color-gray" : ""}}'>满{{redBag.applicableAmt}}元可用</view>
+            <view class='red-text-desc {{activatIndex != 0 ? "color-gray" : ""}}'>{{redBag.couponDesc}}</view>
+          </view>
+          <view class='item-content-right'>
+          </view>
+        </view>
+        <view class='list-item-foot'>
+          <text class='{{activatIndex != 0 ? "color-gray" : ""}}'>有效期至{{redBag.applicableTo}}</text>
+        </view>
+      </view>
+    </block>
+    <view class='coupons-list-nomore' wx:if="{{noMore}}">没有更多了</view>
+    <!-- 没有红包 -->
+    <view class='no-redpacket' wx:if="{{!redList.length}}">
+       <image src='../../assets/imgs/no-redpacket.png' class='no-redpacket-img'></image> 
+      <view class='no-redpacket-text'>你还没有可用红包哦</view>
+      <view class='back-home-btn' bindtap='toHome'>回首页</view>
+    </view>
+  </view>
+  <view class='redpacket-use-rule' bindtap='toRedRule'>红包使用规则</view>

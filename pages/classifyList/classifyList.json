@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "jn-goodlist": "/widget/goodlist/goodlist",
+    "jn-toast": "/widget/toast/toast",
+    "jn-err": "/widget/error/error"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 0
+}

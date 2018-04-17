@@ -1,0 +1,107 @@
+/**index.wxss**/
+.current-city{
+  width: 100%;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #332500;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  background: #fff;
+  overflow: hidden;
+}
+.city-contenter{
+  max-width: 400rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.location-contenter-right{
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 14rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  margin-left: 10rpx;
+  vertical-align: top;
+}
+.home-city-icon{
+  margin-right: 20rpx;
+  color: #FF9C2B;
+  font-size: 24rpx;
+}
+.home-loaction-icon{
+  width: 20rpx;
+  height: 24rpx; 
+  margin-right: 10rpx;
+}
+.home-loaction-tangle{
+  width: 14rpx;
+  height: 10prx;
+  position: absolute;
+  left: 0;
+  top: 20rpx;
+}
+.home-has-padding{
+  margin-top: 48rpx;
+}
+home-has-padding{
+  margin-top: 0;
+}
+
+
+/* 弹窗广告  */
+.jn-ad {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.50);
+  z-index: 99;
+}
+.jn-ad-box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  min-width: 76%; 
+}
+.jn-ad-box::after{
+  content: '';
+  position: absolute;
+  right: 30rpx;
+  top: -30rpx;
+  height: 30rpx;
+  width: 2rpx;
+  background: #fff;
+}
+.jn-ad-close{
+  position: absolute;
+  right: 12rpx;
+  top: -66rpx;
+  color: #fff;
+  width: 36rpx;
+  height: 36rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+}
+.jn-ad-close-icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 18rpx;
+}
+.ad-img{
+  width: 100%;
+}

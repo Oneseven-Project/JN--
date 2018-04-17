@@ -1,0 +1,15 @@
+<!--pages/storeList/storeList.wxml-->
+<view class='store-list'>
+  <block wx:if="{{goodlist && goodlist.length > 0}}">
+    <view class='store-list-imgbox'>
+      <image src='{{storeInfo.seller_image ? storeInfo.seller_image  : "../../assets/imgs/f1.png"}}' mode='widthFix' class='store-list-img'></image>
+    </view>
+    <jn-goodlist goodlist="{{goodlist}}"></jn-goodlist>
+    <jn-toast class="toast" text="{{toastText}}" ></jn-toast>
+  </block>
+  <block wx:if="{{isError}}">
+    <jn-err></jn-err>
+  </block>
+</view>
+
+

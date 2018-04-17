@@ -1,0 +1,16 @@
+<!--components/banner/banner.wxml-->
+<block wx:if="{{item.conf.items.length > 1}}">
+  <swiper indicator-dots="true" circular indicator-color="rgba(255,255,255,0.5)"  indicator-active-color="#FF9C2B"
+  autoplay="true" interval="3000" duration="400" style="flex: 1;height:{{swiperHeiht}}px;" class='jn-swiper-item'>
+    <block wx:for="{{item.conf.items}}" wx:for-item="bannerItem" wx:for-index="idx" wx:key="{{idx}}">
+      <swiper-item style="position:relative">
+         <image src="{{bannerItem.pic}}" class="slide-image" mode="widthFix" bindtap='goTo' data-item='{{bannerItem}}' style="height:{{swiperHeiht}}px;"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</block>
+<block wx:else>
+  <block wx:for="{{item.conf.items}}" wx:for-item="bannerItem" wx:for-index="idx" wx:key="{{idx}}">
+    <image src="{{bannerItem.pic}}" mode="widthFix" style="width: 100%;" bindtap='goTo' data-item='{{bannerItem}}'/>
+  </block>
+</block>

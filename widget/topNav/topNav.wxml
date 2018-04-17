@@ -1,0 +1,10 @@
+<!--widget/topNav/topNav.wxml-->
+<wxs src="../../assets/wxs/style.wxs" module="style" />
+<view class='jn-topnav'>
+  <jn-tab tabs="{{tabs}}" bind:tabCLick="tabClick" class="jn-topNav-tabs"></jn-tab>
+  <view class='jn-topnav-conten'>
+    <jn-template class="jn-template" item="{{templateConf}}" tempData="{{templateData}}"   style="{{style.flex(templateConf.col)}}"></jn-template>
+  </view>
+</view>
+
+

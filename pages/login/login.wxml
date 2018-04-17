@@ -1,0 +1,15 @@
+<!--pages/login/login.wxml-->
+<image class='login-bg' src='../../assets/imgs/banner.png'></image>
+<view class='login-moile'>
+    <text class='iconfont icon-PhoneNumber login-icon'></text>
+    <input type='number' placeholder='输入手机号码' class='login-phone-input' maxlength="11" bindinput="bindPhoneNum" placeholder-class="login-input-placeholder"></input>
+    <button class='login-moile-codeBtn' bindtap='getCode' disabled="{{disTap}}">{{codeText}}</button>
+</view>
+<view class='login-code'>
+  <text class='iconfont icon-PassWord login-icon'></text>
+  <input type='number' placeholder='短信验证码' class="login-code-input" maxlength="6" bindinput="bindCode" placeholder-class="login-input-placeholder"></input>
+</view>
+<view class='login-btn'>
+  <button class='login-btn-login' bindtap='tapLogin'>登录</button>
+</view>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

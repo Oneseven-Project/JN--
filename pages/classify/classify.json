@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分类",
+  "usingComponents": {
+    "jn-toast": "/widget/toast/toast"
+  }
+}

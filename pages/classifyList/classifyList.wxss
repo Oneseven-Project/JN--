@@ -1,0 +1,70 @@
+/* pages/classifyList/classifyList.wxss */
+.classify-list{
+  height: 100vh;
+  position: relative;
+  padding-top: 70rpx;
+}
+.hadpadding{
+  padding-top: 0;
+}
+.classify-list-tabs{
+  height: 70rpx;
+  line-height: 70rpx;
+  white-space: nowrap;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background: #fff;
+}
+.classify-list-scroll{
+  width: 100%;
+  height: 72rpx; 
+  white-space:nowrap;
+  position: relative;
+}
+.classify-list-scroll::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  transform: translateY(0.5);
+  background: #e6e6e6;
+}
+.classify-list-tabItem{
+  display: inline-block;
+  max-width: 200rpx;
+
+}
+.classify-list-tabItem{
+  padding: 0 31rpx;
+  max-width: 7em;
+  min-width: 72rpx; 
+  font-size: 24rpx;
+  position: relative;
+  text-align: center;
+}
+.activatedTab{
+  color: #FF9C2B;
+}
+.classify-item-active{
+  position: absolute;
+  left: 50%;
+  min-width: 2em;
+  max-width: 7em;
+  transform: translateX(-50%);
+  bottom: 0rpx;
+  height: 8rpx;
+  background: #FF9C2B;
+  z-index: 9;
+}
+.classify-list-nodata{
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}

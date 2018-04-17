@@ -1,0 +1,38 @@
+/* widget/error/error.wxss */
+.err-page{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.err-box{
+  width: 260rpx;
+  position: absolute;
+  left: 50%;
+  top: 200rpx;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.err-img{
+  width: 260rpx;
+  height: 260rpx;
+}
+.err-text{
+  text-align: center;
+  font-size: 32rpx;
+  color: #332500;
+}
+.err-btn{
+  width: 176rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  border-radius: 100rpx;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  color: #332500;
+}
+.err-btn::after{
+  border-radius: 100rpx;
+}

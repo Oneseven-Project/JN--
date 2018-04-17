@@ -1,0 +1,195 @@
+/* pages/my/my.wxss */
+.my{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fafafa;
+  min-height: 100vh;
+}
+.my-info{
+  width: 100%;
+  height: 260rpx;
+  position: relative;
+}
+.my-info-bg{
+  width: 100%;
+  height: 260rpx;
+}
+.my-info-avatar{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top:48rpx;
+  transform: translateX(-50%);
+}
+.my-info-avatarimg{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 6rpx solid #fff;
+}
+.my-info-mobile{
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: -36rpx;
+  transform: translateX(-50%);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.my-info-phoneNum{
+  font-size: 40rpx;
+  width: 164rpx;
+  text-align: center;
+}
+.my-info-text{
+  font-size: 28rpx;
+}
+.my-info-imgbtn{
+  background: none; 
+  border-radius: 50%;
+  padding: 0;
+  height: 100rpx;
+  width: 100rpx;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+.my-info-imgbtn::after{
+  display: none;
+}
+.my-infn-loginBtn{
+  text-align: center;
+  width: 164rpx;
+  color: white;
+  font-size: 32rpx;
+  margin: 0 auto;
+   margin-top: 10rpx; 
+}
+.my-infn-loginBtn::after{
+   display: none 
+}
+.my-info-orders{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  height: 163rpx;
+  margin-bottom: 20rpx;
+  background: #fff;
+}
+
+.my-order-list{
+  width: 100%;
+  height: 112rpx;
+  line-height: 112rpx;
+  padding: 0 40rpx;
+  background: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+.my-order-left{
+  flex: 1;
+  font-size: 32rpx;
+  color: #332500;
+}
+.my-order-right{
+  flex: 1;
+  text-align: right;
+}
+.my-order-more{
+  color: #999;
+  font-size: 24rpx;
+  margin-right: 8rpx;
+}
+.icon-Arrow{
+  font-size: 22rpx;
+  color: #999;
+  vertical-align: middle;
+}
+
+.my-info-orders-tatus{
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #332500;
+}
+.my-orders-imgicon{
+  width: 48rpx;
+  height: 48rpx;
+}
+.my-info-status-icon{
+  width: 48rpx;
+  height: 48rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  position: relative;
+}
+.orders-status-num{
+  position: absolute;
+  right: -15rpx;
+  top: -15rpx;
+  background: #FF5344;
+  color: #fff;
+  font-size: 20rpx;
+  padding: 2rpx 4rpx; 
+  min-width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+}
+.my-info-status-text{
+  margin-top: 13rpx;
+  text-align: center;
+}
+.my-servers{
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+.my-servers-header{
+  height: 113rpx;
+  line-height: 113rpx;
+  font-size: 32rpx;
+  padding: 0 40rpx;
+  color: #332500;
+}
+.my-servers-box{
+  height: 163rpx;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+  position: relative;
+}
+.my-1px-box{
+  width: 100%;
+  height: 1;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.my-servers-icon{
+  width: 48rpx;
+  height: 48rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  position: relative;
+}
+.my-servers-item{
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #332500;
+}
+.myad{
+  width: 100%;
+  margin: 20rpx;
+}

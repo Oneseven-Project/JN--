@@ -1,0 +1,48 @@
+
+<template name="statement-goodlist">
+  <view class='goods-list-model'>
+    <block wx:for="{{goodList}}" wx:key="index" wx:for-index="index" wx:for-item="list">
+      <view class="goodlist-container">
+        <view class='goodlist-head jn-1px-b'>
+          <text>{{list.seller_name}}</text>
+        </view>
+        <view class='goodlist-goods'>
+          <block  wx:for="{{list.item_list}}" wx:key="idx" wx:for-index="idx" wx:for-item="good">
+            <view class='goolist-goods-container jn-1px-b'>
+              <view class='goodlist-goods-imgbox'>
+                <image class='goodlist-goods-img' src='{{good.item.sku_img ? good.item.sku_img : "../../assets/imgs/fruit.jpg"}}'></image>
+              </view>
+              <view class='goodlist-good-info'>
+                <view class='good-title'>{{good.item.spu_name}}</view>
+                <view class='good-desc'>{{good.item.sku_name}}</view>
+                <view class='good-price-num'>
+                  <view class='good-price'>￥{{good.item.sale_price}}</view>
+                  <view class='good-num'>× {{good.item.quantity}}</view>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class='goodlist-receiving {{!list.isFastMail ? "has-padding" :""}}'>
+          <view class='goodlist-receiving-type'>
+            <view class='goodlist-receiving-fastMail'>配送方式</view>
+            <view class='goodlist-receiving-fastMail'>
+              <text class='iconfont icon-Radio_Selected checkbox-selected' wx:if="{{list.isFastMail}}"></text>
+              <text class='iconfont icon-Raido_Normal checkbox-noSelected' wx:else bindtap='fastmail' data-index="{{index}}" data-item='{{list}}'></text>
+              <text class='goodlist-receiving-type-text' bindtap='fastmail' data-index="{{index}}" data-item='{{list}}'>普通快递</text>
+            </view>
+            <view class='goodlist-receiving-takeTheir'>
+              <text class='iconfont icon-Radio_Selected checkbox-selected' wx:if="{{!list.isFastMail}}" ></text>
+              <text class='iconfont icon-Raido_Normal checkbox-noSelected' wx:else bindtap='fastmail' data-index="{{index}}" data-item='{{list}}'></text>
+              <text class='goodlist-receiving-type-text' bindtap='fastmail' data-index="{{index}}" data-item='{{list}}'>到店自提</text>
+            </view>
+          </view>
+          <view class='goodlist-receiving-address' wx:if="{{!list.isFastMail}}">
+            <!-- <view class='goodlist-receiving-tip'>自提地址:</view> -->
+            <view class='goodlist-receiving-address-text'>自提地址: {{list.address}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

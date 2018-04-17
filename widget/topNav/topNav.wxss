@@ -1,0 +1,15 @@
+/* widget/topNav/topNav.wxss */
+.jn-topnav{
+  width: 100%;
+}
+.jn-topNav-tabs{
+  position: fixed;
+  top: 48rpx;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #fff; 
+}
+.jn-topnav-conten{
+   margin-top: 116rpx; 
+}

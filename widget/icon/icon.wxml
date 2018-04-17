@@ -1,0 +1,7 @@
+<!--widget/icon/icon.wxml-->
+<block wx:for="{{item.conf.items}}" wx:for-item="icon" wx:for-index="idx" wx:key="{{idx}}">
+  <view class="jn-icon-item">
+    <image class="jn-icon-image" src="{{icon.pic}}" mode="widthFix" style="width: 100%" lazy-load/>
+    <text class="jn-icon-text" wx:if="{{icon.title}}">{{icon.title}}</text>
+  </view>
+</block>

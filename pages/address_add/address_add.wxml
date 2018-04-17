@@ -1,0 +1,63 @@
+<!--pages/address_add/address_add.wxml-->
+<view class='adress-add jn-1px-t'>
+
+  <view class='adress-add-cell jn-1px-b'>
+    <label class='address-add-label'>收货人</label>
+    <input class='adress-add-input' placeholder='收货人姓名' placeholder-class='placeholder-text' value="{{adressInfo.name}}" bindinput="nameInput"></input>
+  </view>
+
+  <view class='adress-add-cell jn-1px-b'>
+    <label class='address-add-label'>联系电话</label>
+    <input class='adress-add-input' type='number' placeholder='手机号码' placeholder-class='placeholder-text' value="{{adressInfo.phone}}" bindinput="phoneInput"></input>
+  </view>
+
+  <view class='adress-add-cell jn-1px-b'>
+    <label class='address-add-label'>选择省</label>
+    <picker range='{{provinces}}' bindchange="provinChange" range-key="provinceName"  value="{{proIdx}} "class='adress-add-input'>
+       <text class='picker-text-placeholder' wx:if="{{!(adressInfo && adressInfo.province)}}">请选择</text> 
+      <text wx:else>{{adressInfo ? adressInfo.province_name : provinces[proIdx].provinceName }}</text>
+    </picker>
+    <text class='iconfont icon-Arrow address-icon-arrow'></text>
+  </view>
+
+  <view class='adress-add-cell jn-1px-b'>
+    <label class='address-add-label'>选择市</label>
+    <picker range='{{citys}}' bindchange="citysChange" range-key="cityName" value='{{cityIdx}}' class='adress-add-input' disabled="{{!(adressInfo && adressInfo.province)}}">
+      <text class='picker-text-placeholder' wx:if="{{!(adressInfo && adressInfo.city)}}">请选择</text>
+      <text wx:else>{{adressInfo ? adressInfo.city_name : citys[cityIdx].cityName }}</text>
+    </picker>
+    <text class='iconfont icon-Arrow address-icon-arrow'></text>
+  </view>
+
+  <view class='adress-add-cell jn-1px-b'>
+    <label class='address-add-label'>区/县</label>
+    <picker range='{{districts}}' bindchange="districtChange" range-key="areaName" value='{{disIdx}}' class='adress-add-input' disabled="{{!(adressInfo && adressInfo.province && adressInfo.city)}}">
+      <text class='picker-text-placeholder' wx:if="{{!(adressInfo && adressInfo.district)}}">请选择</text>
+      <text wx:else>{{adressInfo ? adressInfo.district_name : districts[disIdx].areaName }}</text>
+    </picker>
+    <text class='iconfont icon-Arrow address-icon-arrow'></text>
+  </view>
+
+  <view class='adress-add-cell jn-1px-b'>
+    <label class='address-add-label'>街道</label>
+    <picker range='{{streets}}' bindchange="streetChange" range-key="streetName" value='{{streetIdx}}' class='adress-add-input' disabled="{{!(adressInfo && adressInfo.province && adressInfo.city && adressInfo.district)}}">
+      <text class='picker-text-placeholder' wx:if="{{!(adressInfo && adressInfo.street)}}">请选择</text>
+      <text wx:else>{{adressInfo ? adressInfo.street_name : streets[streetIdx].streetName }}</text>
+    </picker>
+    <text class='iconfont icon-Arrow address-icon-arrow'></text>
+  </view>
+
+  <view class='adress-add-area jn-1px-b'>
+    <view class='address-add-label'>详细地址:</view>
+    <textarea  class="adress-add-textare" placeholder-class='placeholder-text' placeholder='如门牌号等' value="{{adressInfo.address}}" bindinput="textareaInput" auto-height="true"></textarea>
+  </view>
+
+  <view class='adress-add-default'>
+    <checkbox-group bindchange="bindCheckbox">
+      <checkbox class='adress-add-default-checkbox' checked='{{adressInfo.is_default}}'><text class='checkbox-text'>设为默认地址</text></checkbox>
+    </checkbox-group>
+  </view>
+
+  <view class='adress-add-btn' bindtap='save'>保存</view>
+</view>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

@@ -1,0 +1,19 @@
+var priceFix = function (num) {
+  var intNum = 0
+  var floatNum = '00'
+  intNum = parseInt(num)
+  floatNum = (num - intNum).toFixed(2)
+  if (floatNum == 0) {
+    floatNum = "00"
+  } else {
+     floatNum = floatNum.split(".")[1]
+  }
+  return {
+    intNum: intNum,
+    floatNum: floatNum,
+    allNum: intNum + "." + floatNum
+  }
+}
+module.exports = {
+  priceFix: priceFix
+}

@@ -1,0 +1,379 @@
+/* pages/goods/goods.wxss */
+.goods{
+  padding-bottom: 130rpx;
+}
+.good-swiper-box{
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.good-swiper{
+  width: 100%;
+  height: 440rpx;
+  text-align: center;
+  position: relative;
+}
+.good-info-point{
+  position: absolute;
+  right: 30rpx;
+  bottom: 30rpx;
+  border: 1rpx solid #d5d5d5;
+  border-radius: 100rpx;
+  width: 80rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  text-align: center;
+  background: rgba(255,255,255,0.50);
+  font-size: 20rpx;
+  color: #332500;
+}
+.good-swiper-sale-out{
+  position: relative;
+  height: 98rpx;
+  line-height: 98rpx;
+  background: rgba(255, 83, 68, 0.8);
+  box-sizing:border-box;
+  padding-left: 40rpx;
+  text-align: left;
+  font-size: 32rpx;
+  color: #fff;
+}
+.good-swiper-item{
+  text-align: center;
+  position: relative;
+}
+.good-sale-out{
+  position: absolute;
+  left: 20%;
+  bottom: 0;
+  background: #000;
+  color: #fff;
+  padding: 5rpx 10rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+}
+.good-info-image{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 440rpx;
+  height: 440rpx;
+}
+.good-seller-dot-image{
+  width: 100%;
+  transform: translateY(100%);
+}
+.good-info{
+  position: relative;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.good-info-title{
+  font-size: 40rpx;
+  line-height: 56rpx;
+  max-width: 85%;
+  color: #332500;
+  font-weight: 600;
+}
+.good-info-title-text{
+  font-size: 36rpx;
+  font-weight: normal;
+  color: #332500;
+}
+.good-info-title-tag {
+  display: inline-block;
+  vertical-align: middle;
+  background: #FF5344;
+  border-radius: 4rpx;
+  padding: 0rpx 10rpx;
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #fff;
+  margin-right: 10rpx;
+  margin-top: -5rpx;
+}
+.good-info-share-btn{
+  display: block;
+  position: absolute;
+  right: 0rpx;
+  top: 26rpx;
+  width: 120rpx;
+  height: 100rpx;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  color: #999;
+  background: #fff;
+  font-weight: normal;
+}
+button::after{
+  display: none;
+}
+.good-info-share-text{
+  position: absolute;
+  right: 40rpx;
+  top: 54rpx;
+  font-size: 22rpx;
+  color: #999;
+  font-weight: normal;
+}
+.good-info-share{
+  font-size: 30rpx;
+  color: #999;
+  font-weight: normal;
+}
+.good-info-subTitle{
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #999999;
+}
+.good-info-price-tag{
+  color: #FF9C2B;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.good-info-price{
+  margin-top: 10rpx;
+}
+.good-info-price-intNum{
+  font-size: 40rpx;
+  color: #FF9C2B;
+  font-weight: 600;
+}
+.good-info-originPrice{
+  font-size: 28rpx;
+  text-decoration: line-through;
+  color: #999;
+  margin: 0 20rpx;
+}
+.good-info-line{
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 20rpx;
+}
+.good-info-unitPrice{
+    font-size: 28rpx;
+    color: #332500;
+}
+.good-info-spec{
+  margin-left: -30rpx;
+  margin-bottom: -30rpx;
+  box-sizing: border-box;
+}
+.good-info-specBox{
+  display: inline-block;
+  padding: 0 40rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 28rpx;
+  background: #fafafa;
+  border-radius: 4rpx;
+  border: 1rpx solid #e6e6e6;
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+.good-adev-tipsBox{
+  padding: 0 40rpx; 
+  margin-top: 41rpx;  
+}
+.good-active-sku{
+  background: #FFF7E6;
+  border: 1rpx solid #FF9C2B;
+}
+.good-adev-tips{
+  height: 85rpx;
+  line-height: 85rpx;
+  position: relative;
+}
+.good-adev-img{
+   width: 110%; 
+  position: absolute;
+  left: -40rpx;
+  right: -40rpx;
+  top: 0rpx;
+}
+.good-adev-list{
+  flex: 1;
+} 
+.good-adev-icon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 31rpx;
+  vertical-align: middle;
+  color: #e6e6e6;
+}
+.good-adev-icon:first-child{
+  margin-left: 0;
+}
+.good-jn-tips{
+  font-size: 20rpx;
+  margin-left: 10rpx;
+}
+/* 买手推荐  */
+.good-seller-recommend{
+  padding: 40rpx;
+  margin-top: 70rpx;
+}
+.good-seller-box{
+  border: 6rpx solid #e6e6e6;
+  border-radius: 24rpx;
+}
+.good-seller-title{
+  background: #f5f5f5;
+  border-radius: 24rpx 24rpx 0 0;
+  padding-left:116rpx; 
+  height: 64rpx;
+  line-height: 64rpx;
+  position: relative;
+}
+.good-seller-avatar{
+  position: absolute;
+  left: 30rpx;
+  bottom: 30rpx;
+  width: 80rpx;
+  height: 80rpx;
+  z-index: 1;
+  border-radius: 50%;
+}
+.good-seller-avatar-img{
+  width: 100%;
+  border-radius: 50%;
+}
+.good-seller-text{
+  padding: 30rpx;
+  font-size: 28rpx;
+  position: relative;
+}
+.good-seller-dot{
+  position: absolute;
+  right: 52rpx;
+  bottom: -26rpx;
+  width: 103rpx;
+  height: 103rpx;
+  background: #fff;
+  z-index: 1;
+}
+.good-detail{
+  padding: 40rpx;
+  overflow: hidden;
+}
+.good-detail::after{
+  content: "";
+  clear: both;
+  overflow: hidden;
+}
+.good-detail-title{
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.good-detail-attrs{
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 50%;
+  float: left;
+}
+/* .good-detail-attrs:nth-child(odd){
+  background: #fff;
+}
+.good-detail-attrs:nth-child(even){
+  background: rgba(0, 0, 0, 0.01);
+} */
+.good-attrs-key {
+  color: #666;
+  /* margin-left: 20rpx;
+  min-width: 120rpx; */   
+  display: inline-block;
+}
+.good-attrs-value{
+  color: #332500;
+  font-weight: 600;
+  /* margin-left: 5rpx; */
+}
+/* 富文本  */
+.good-richText{
+  padding: 40rpx;
+  overflow: hidden;
+}
+.good-foot-cart{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: #fff;
+}
+.good-desc-img{
+  width: 100%;
+  display: block;
+}
+.good-cart-box{
+  float: left;
+  width: 240rpx;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.good-icon-cart{
+  color: #807C73;
+  font-size: 36rpx;
+  position: relative;
+}
+.good-cart-num{
+  display: block;
+  z-index: 11;
+  position: absolute;
+  right: -20rpx;
+  top: -10rpx;
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  background: #FF5344;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+  border-radius: 50%;
+}
+.good-foot-btn{
+  float: left;
+  width: 510rpx; 
+  height: 110rpx;
+  box-sizing: border-box;
+  line-height: 110rpx;
+  text-align: center;
+  background: #FF9C2B;
+  color: #fff;
+  font-size: 32rpx;
+}
+.canNoBuy-foot-btn{
+  background: #e6e6e6;
+  color: #999;
+}
+.good-no-goods{
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  min-height: 200rpx;
+  left: 50%;
+  top: 200rpx;
+  transform: translateX(-50%);
+}
+.good-back-home{
+  position: absolute;
+  left: 40rpx;
+  top:40rpx;
+  padding: 10rpx 10rpx;
+  width: 120rpx;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 30rpx;
+}
+.icon-Back{
+  font-size: 20rpx;
+  margin-right: 8rpx;
+}

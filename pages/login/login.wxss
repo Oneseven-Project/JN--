@@ -1,0 +1,89 @@
+/* pages/login/login.wxss */
+.login-bg{
+  width: 100%;
+  height: 268rpx;
+}
+.login-moile{
+  width: 100%;
+  position: relative;
+  padding: 32rpx 0;
+  margin-top: 20rpx;
+}
+.login-moile::after{
+  content: '';
+  position: absolute;
+  left: 40rpx;
+  bottom: 0;
+  right: 40rpx;
+  height: 2rpx;
+  background: #E6E6E6; 
+}
+.login-phone-input{
+  margin-left: 90rpx;
+  width: 470rpx;
+}
+.login-moile-codeBtn{
+   min-width: 150rpx;
+  font-size: 22rpx;
+  line-height: normal;
+  margin: 0;
+  padding: 7rpx 20rpx; 
+  position: absolute;
+  right: 40rpx;
+  top: 30rpx;
+  background: none;
+  box-sizing: border-box;
+  border-radius: 100rpx;
+  border: 1px solid #E6E6E6;
+}
+.login-moile-codeBtn::after{
+  display: none;
+}
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+  color:#999;
+  background-color:#E6E6E6;
+}
+
+.login-code{
+  width: 100%;
+  position: relative;
+  padding: 32rpx 0;
+}
+.login-code::after{
+  content: '';
+  position: absolute;
+  left: 40rpx;
+  bottom: 0;
+  right: 40rpx;
+  height: 2rpx;
+  background: #E6E6E6; 
+}
+.login-code-input{
+  margin-left: 90rpx;
+  width: 500rpx;
+}
+.login-tip{
+  display: block;
+  padding: 40rpx;
+  font-size: 24rpx;
+  color: #ccc;
+}
+.login-btn{
+  padding: 60rpx 40rpx 44rpx 40rpx;
+}
+.login-btn-login{
+  background: #FF9C2B;
+  color: #FFF;
+  font-size: 32rpx;
+}
+.login-icon{
+   font-size: 32rpx;
+   color: #332500;
+   position: absolute;
+   left: 40rpx;
+   top: 35rpx;
+}
+.login-input-placeholder{
+  color: #999;
+  font-size: 32rpx;
+}

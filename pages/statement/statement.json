@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "jn-toast": "/widget/toast/toast",
+    "jn-model": "/widget/showmodel/showmodel"
+  },
+  "navigationBarTitleText": "确定订单"
+}

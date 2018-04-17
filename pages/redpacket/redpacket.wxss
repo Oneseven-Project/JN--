@@ -1,0 +1,167 @@
+/* pages/redpacket/redpacket.wxss */
+.redpacket-tab{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #fff;
+  z-index: 9;
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+}
+.redpacket-tab-item{
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #332500;
+  position: relative;
+}
+.activatedItem{
+  color: #FF9C2B;
+}
+.activaed-item {
+  position: absolute;
+  width: 3em;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4rpx;
+  color: #FF9C2B;
+  background: #FF9C2B;
+}
+/* 红包列表  */
+.redpacket-list{
+  background: #fafafa;
+  min-height: calc(100vh - 70rpx);
+  padding: 0 40rpx;
+  margin-top: 70rpx;
+  padding-bottom: 20rpx;
+  overflow: hidden; 
+}
+.redpacket-list-item{
+  margin-top: 30rpx;
+  position: relative;
+  min-height: 260rpx;
+}
+.list-item-foot{
+  position: absolute;
+  left: 0;
+  bottom: 20rpx;
+  padding: 0 40rpx;
+  z-index: 2;
+  font-size: 20rpx;
+  color: #999;
+}
+.redpacket-bgimg{
+  width: 100%;
+  height: 260rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.redpacket-bgimg-img{
+  width: 100%;
+  height: 260rpx;
+}
+
+.list-item-content{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  padding: 0 40rpx;
+  height: 260rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row;
+}
+
+/*左侧  */
+.item-content-left{
+  min-width: 210rpx;
+  padding-top: 50rpx;
+  color: #FF9C2B;
+}
+.item-red-conunt{
+  margin: 0 auto;
+  margin-left: 30rpx;
+}
+.item-red-icon{
+  font-size: 32rpx;
+}
+.item-red-num {
+  font-size: 100rpx;
+}
+
+.item-content-center{
+  flex: 1;
+  padding-top: 50rpx;
+  margin-left: 20rpx;
+}
+.red-text-desc-title{
+  font-size: 24rpx;
+  color: #332500;
+}
+.red-text-desc{
+  color: #999;
+  font-size: 20rpx;
+  font-weight: normal;
+}
+
+.item-content-right{
+  width: 210rpx;
+}
+
+.color-gray{
+  color: #D0D0D0;
+}
+/* 红包使用规则  */
+.redpacket-use-rule{
+  position: fixed;
+  bottom: 30rpx;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 3;
+  font-size: 24rpx;
+  color: #FF9C2B;
+}
+
+
+/* 没有可用红包  */
+.no-redpacket{
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
+  text-align: center;
+}
+.no-redpacket-img{
+  width: 260rpx;
+  height: 260rpx;
+}
+.no-redpacket-text{
+  font-size: 32rpx;
+  color: #332500;
+  margin: 0 auto;
+}
+.back-home-btn{
+  font-size: 24rpx;
+  color: #332500;
+  width: 176rpx;
+  text-align: center;
+  border: 2rpx solid #999;
+  border-radius: 100rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.coupons-list-nomore{
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+}

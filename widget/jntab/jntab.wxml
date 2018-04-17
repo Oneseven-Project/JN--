@@ -1,0 +1,15 @@
+<!--widget/jn-tab/jn-tab.wxml-->
+<wxs src="../../assets/wxs/style.wxs" module="style" />
+<view class='jn-tab'>
+  <view class='jn-tab-header jn-1px-b'>
+    <block wx:for="{{item.conf.items}}" wx:key="index" wx:for-index="index" wx:for-item="tabItem">
+      <view class='jn-tab-item {{activatedIdx== index ? "activatedTab" : ""}}' bindtap='tabClick' data-index='{{index}}' data-item="{{tabItem}}">
+        <text class='jn-tab-item-text'>{{tabItem.title}}</text>
+        <view class='jn-tab-item-active' style="width:{{tabItem.title.length}}em" wx:if="{{activatedIdx== index}}"></view>
+      </view>
+    </block>
+  </view>
+  <view class='jn-tab-content'>
+    <jn-template class="jn-template" item="{{templateConf}}" tempData="{{templateData}}" style="{{style.flex(templateConf.col)}}"></jn-template>  
+  </view>
+</view>

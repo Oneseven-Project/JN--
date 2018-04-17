@@ -1,0 +1,469 @@
+/* widget/goodlist/goodlist.wxss */
+@import "/assets/iconfont/iconfont.wxss";
+@import "/assets/style/1px.wxss";
+
+
+/* 列表标题 */
+.goodlist-main-title{
+  width: 100vw;
+  padding: 40rpx 40rpx 0 40rpx;
+}
+.goodlist-main-title-text{
+  color: #332500;
+  font-size: 40rpx;
+}
+.goodlist-main-sub-text{
+  font-size: 24rpx;
+  line-height: 36rpx;
+  color: #999;
+}
+
+.jn-goodlist{
+  width: 100vw;
+}
+.jn-goodlist-box{
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.goods-item{
+  padding: 20rpx 0;
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.goods-item-imgs{
+  flex: 1;
+  vertical-align: middle;
+  max-width: 236rpx;
+  margin-right: 40rpx;
+  position: relative;
+}
+.goods-item-img{
+  width: 236rpx;
+  height: 236rpx;
+}
+
+/* 活动标签 */
+.goodlist-item-activity{
+  position: absolute;
+  display: inline-block;
+  padding: 5rpx 10rpx;
+  left: 0;
+  top: 0;
+  background: #FF5344;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 4rpx 4rpx 4rpx 0;
+}
+.goodlist-item-activity::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10rpx;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid #FF5344;
+  border-left: 10rpx solid transparent;
+}
+.goodlist-item-saleOut{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(51, 37, 0, 0.7);
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  text-align: center;
+}
+.goodlist-item-saleOut-textCN{
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 50rpx;
+}
+.goodlist-item-saleOut-textEN{
+  color: #fff;
+  font-size: 12rpx;
+}
+
+/* 商品信息 */
+.goods-item-info{
+  flex: 1;
+  vertical-align: middle;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+.good-item-title{
+  margin-top: 20rpx;
+  width: 100%;
+  font-size: 32rpx;
+  color: #332500;
+  line-height: 40rpx;
+  max-height: 80rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.good-item-subTitle{
+  width: 100%;
+  font-size: 24rpx;
+  color: #999;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.good-item-infoDetail{
+  display: flex;
+  flex-flow: row;
+  font-size: 24rpx;
+  margin: 20rpx 0;
+}
+.good-item-origin{
+  flex: 1;
+}
+.good-item-unitPrice{
+  flex: 1;
+  margin-left: 20rpx;
+}
+.good-item-unitPrice-noMargin{
+  flex: 1;
+  margin-left: 0;
+}
+.good-item-line{
+  width: 1px;
+  height: 48rpx;
+  background: #E6E6E6;
+}
+.blockItem{
+  display: block;
+}
+.gray{
+  color: #999;
+  font-size: 20rpx;
+}
+.good-item-price-icon{
+  color: #FF9C2B;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+.good-item-price-num{
+  color: #FF9C2B;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.good-item-price-origin{
+  color: #999;
+  font-size: 22rpx;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+.good-item-price{
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  right: 0;
+}
+/*购物车按钮  */
+.good-item-addCart{
+  position: absolute;
+  right: 0;
+  bottom: 8rpx;
+  width: 158rpx;
+  height: 50rpx;
+  text-align: right;
+  margin-top: 26rpx;
+}
+.good-item-btn{
+  position: relative;
+  display: block; 
+  text-align: center;
+  font-size: 48rpx;
+  color: #FF9C2B;
+  float: right;
+}
+.good-item-btnPlus{
+  position: absolute;
+  display: block;
+  font-size: 18rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  z-index: 2;
+}
+.good-item-num{
+  display: block;
+  width: 62rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #332500;
+}
+.good-item-cirlcleSub{
+  color: #E6E6E6;
+}
+.good-item-btnSub{
+  position: absolute;
+  display: block;
+  font-size: 18rpx;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #332500;
+  z-index: 2;
+}
+
+
+
+/* 列表二  */
+.goodlist-two{
+  width: 100vw;
+  position: relative;
+}
+.goods-list-tabs{
+  height: 80rpx;
+  width: 100%;
+  position: relative;
+}
+.goods-list-tabs::after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+  background: #e6e6e6;
+}
+.goods-list-tabs::before{
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+  background: #e6e6e6;
+}
+.goods-list-tabItem{
+  float: left;
+  width: 25%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #332500;
+  position: relative;
+}
+.activeTab{
+  color: #FF9C2B;
+}
+.goods-list-tabItem::after{
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 20rpx;
+  bottom: 20rpx;
+  width: 2rpx;
+  background: #e6e6e6;
+}
+.goods-list-tabItem:last-child::after{
+  display: none;
+}
+.goodlist2{
+  margin-right: 40rpx;
+}
+.goodlist2-item{
+  float: left;
+  width: calc(50% - 60rpx);
+  box-sizing: border-box;
+  text-align: center;
+  margin-top: 40rpx;
+  padding-bottom: 30rpx;
+  margin-left: 40rpx;
+  position: relative;
+}
+.goodlist2-item:nth-child(even){
+  margin-right: 40rpx;
+}
+.goodlist2-item::after{
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+  background: #E6E6E6;
+}
+.goodlist2-item-imgsBox{
+  max-width: 265rpx;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.goodlist2-item-img{
+  width: 256rpx;
+  height: 265rpx;
+  margin: auto;
+  vertical-align: middle;
+}
+/* 活动标签  */
+.goodlist2-item-activity{
+  position: absolute;
+  display: inline-block;
+  padding: 5rpx 10rpx;
+  left: 0;
+  top: 0;
+  background: #FF5344;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 4rpx 4rpx 4rpx 0;
+}
+.goodlist2-item-activity::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10rpx;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid #FF5344;
+  border-left: 10rpx solid transparent;
+}
+.goodlist2-item-saleOut{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(51, 37, 0, 0.7);
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  text-align: center;
+}
+.goodlist2-item-saleOut-textCN{
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 50rpx;
+}
+.goodlist2-item-saleOut-textEN{
+  color: #fff;
+  font-size: 12rpx;
+}
+.goodlist2-item-title{
+  color: #332500;
+  font-size: 28rpx;
+  text-align: left;
+  line-height: 36rpx;
+  min-height: 72rpx;
+  max-height: 72rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 20rpx;
+}
+.goodlist2-item-subTitle{
+  font-size: 24rpx;
+  color: #999;
+  text-align: left;
+  line-height: 40rpx;
+  width: 100%;  
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.goodlist2-item-priceBox{
+  text-align: left;
+  position: relative;
+}
+.goodlist2-item-price{
+  text-align: left;
+  color: #FF9C2B;
+  font-size: 36rpx;
+  font-weight: 600;
+}
+.money-tag{
+  font-size: 22rpx;
+  color: #FF9C2B;
+  font-weight: 600;
+}
+.goodlist2-item-originprice{
+  font-size: 22rpx;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10rpx;
+}
+.goodlist2-cart-add{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+}
+.good-item-btn{
+  position: relative;
+  font-size: 48rpx;
+  color: #FF9C2B;
+}
+
+
+.good-item-btnPlus{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-size: 18rpx;
+}
+
+.good-item-btn-disable{
+  position: relative;
+  display: block; 
+  text-align: center;
+  font-size: 48rpx;
+  color: #e6e6e6;
+  float: right;
+}
+.good-item-btnPlus-disable{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #999;
+  font-size: 18rpx;
+}
+
+/* 禁用按钮 */
+.good-item-btnDisable{
+  position: relative;
+  font-size: 48rpx;
+  color: #E6E6E6;
+}
+.good-item-btnPlus-disable{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #999;
+  font-size: 18rpx;
+}
+
+/* 悬浮购物车  */
+.goodlist-cart{
+  position: fixed;
+  left: 40rpx;
+  bottom: 40rpx;
+  z-index: 14;
+}

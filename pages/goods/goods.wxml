@@ -1,0 +1,109 @@
+<!--pages/goods/goods.wxml-->
+<wxs src="../../assets/wxs/price.wxs" module="price" />
+
+<view class='goods' wx:if="{{goodInfo.skus && goodInfo.skus.length > 0}}">
+  <view class='good-swiper-box'>
+    <swiper indicator-dots="{{false}}"
+      autoplay="{{true}}" duration="500" class='good-swiper' wx:if="{{goodInfo.images.length}}" bindchange="pointChange">
+      <block wx:for="{{goodInfo.images}}" wx:key="index" wx:for-item="imgs" wx:for-index="idx">
+        <swiper-item class="good-swiper-item">
+          <image src="{{imgs ? imgs : '../../assets/imgs/fruit.jpg'}}" class="good-info-image"  binderror="swiperErr" data-index='{{idx}}'/>   
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='good-info-point'>{{currentIndex}}/{{goodInfo.images.length}}</view>
+    <view class='good-back-home' bindtap='goHome' wx:if="{{showBack}}"> <text class='iconfont icon-Back'></text>回首页</view>
+  </view>
+  <!-- <view class='good-swiper-sale-out' wx:if="{{!goodInfo.is_on_sale || goodInfo.sku_stock == 0}}">已售罄</view> -->
+  <view class='good-info'>
+    <view class='good-info-title' wx:if="{{goodInfo.spu_name}}">
+      <text class='good-info-title-tag' wx:if="{{goodInfo.tag}}">{{goodInfo.tag}}</text>
+      <text class='good-info-title-text'>{{goodInfo.spu_name}}{{skuName}}</text>
+      <button open-type='share' class='good-info-share-btn'>
+         <text class="good-info-share iconfont icon-Sharenew" bindtap='share'></text>
+         <view class='good-info-share-text' bindtap='share'>分享</view>
+      </button>
+    </view>
+    <view class='good-info-subTitle' wx:if="{{goodInfo.sku_brief}}">{{goodInfo.sku_brief}}</view>
+    <view class="good-info-price" wx:if="{{goodInfo.sale_price}}">
+      <text class='good-info-price-tag'>￥</text>
+      <text class='good-info-price-intNum'>{{price.priceFix(goodInfo.sale_price).intNum}}</text>
+      <text class='good-info-price-tag'>.{{price.priceFix(goodInfo.sale_price).floatNum}}</text>
+      <text class='good-info-originPrice' wx:if="{{goodInfo.purchase_price}}">￥{{price.priceFix(goodInfo.purchase_price).allNum}}</text>
+      <!-- <text class='good-info-line'>|</text> -->
+      <!-- <text class='good-info-unitPrice' wx:if="{{goodInfo.unit_price}}">约￥{{goodInfo.unit_price}}/{{goodInfo.unit_type}}</text> -->
+    </view>
+    <view class='good-info-spec' wx:if="{{goodInfo.skus && goodInfo.skus.length > 0}}">
+      <block wx:for="{{goodInfo.skus}}" wx:key="index" wx:for-index="index" wx:for-item="sku">
+        <text class='good-info-specBox black {{index == activeIdx ? "good-active-sku" : " "}}' bindtap='chooseSku' data-skuIdx="{{index}}" data-sku="{{sku}}">{{sku.name}}</text>
+      </block>
+    </view>
+  </view>
+  <view class='good-adev-tipsBox'>
+    <view class='jn-1px-b-t black good-adev-tips'>   
+      <!-- <view class='good-adev-list' wx:for="{{adev}}" wx:for-key="{{index}}">
+        <text class='iconfont icon-Radio_Selected good-adev-icon'></text>
+        <text class='good-jn-tips'>{{item}}</text>
+      </view> -->
+      <image src='../../assets/imgs/adv.png' class='good-adev-img' mode='widthFix'></image>
+      <!-- <image src='../../assets/imgs/Box.png' class='good-adev-icon'></image>
+      <text class='good-jn-tips'>每日精选</text>
+      <image src='../../assets/imgs/Crown.png' class='good-adev-icon'></image>
+      <text class='good-jn-tips'>品质保证</text>
+      <image src='../../assets/imgs/Moon.png' class='good-adev-icon'></image>
+      <text class='good-jn-tips'>优鲜送达</text>
+      <image src='../../assets/imgs/Free.png' class='good-adev-icon'></image>
+      <text class='good-jn-tips'>69免邮</text> -->
+      </view>  
+  </view>
+  <view class='good-seller-recommend' wx:if="{{goodInfo.recommend_description && goodInfo.presenter_img}}">
+    <view class='good-seller-box jn-1px-b'>
+      <view class='good-seller-title'>
+        <text>买手推荐</text>
+        <view class='good-seller-avatar' wx:if="{{goodInfo.presenter_img}}">
+          <image src="{{goodInfo.presenter_img}}" class="good-seller-avatar-img" mode='widthFix' binderror="bindErrImg"/>
+        </view>
+      </view>
+      <view class='good-seller-text black'>
+        {{goodInfo.recommend_description}}
+        <view class='good-seller-dot'>
+          <image src="../../assets/imgs/dot.png" class="good-seller-dot-image" mode='widthFix'/>
+        </view>      
+      </view>
+    </view>
+  </view>
+  <view class='good-detail' wx:if="{{goodInfo.attributes && goodInfo.attributes.length > 0}}">
+    <view class='good-detail-title black'>商品详情</view>
+    <block wx:for="{{goodInfo.attributes}}" wx:key="idx" wx:for-index="idx" wx:for-item="attr">
+      <view class='good-detail-attrs'>
+        <text class='good-attrs-key'>{{attr.key}}：</text>
+        <text class='good-attrs-value'>{{attr.value}}</text>
+      </view>
+    </block>
+  </view>
+  <!-- 富文本 -->
+  <view class='good-richText jn-1px-b'>
+    <block wx:if="{{goodInfo.is_img_type_desc}}">
+      <block wx:for="{{goodInfo.sku_desc_imgs}}" wx:key="index" wx:for-index="index" wx:for-item="imgScr">
+        <image wx:if="{{imgScr !== ''}}" src='{{imgScr}}' binderror="imgErr" data-index='{{idx}}' class='good-desc-img' mode='widthFix'></image>
+      </block>
+    </block>
+    <block wx:else>
+      <rich-text nodes="{{goodInfo.sku_description}}"></rich-text>
+    </block>
+  </view>
+  <view class='good-jn-introduce'>
+  </view>
+</view>
+<view class='good-no-goods' wx:if="{{isError}}">
+    <jn-err></jn-err>
+</view>
+<view class='good-foot-cart jn-1px-t' wx:if="{{goodInfo.skus && goodInfo.skus.length > 0}}">
+  <view class='good-cart-box' bindtap='goCart'>
+    <text class='iconfont icon-Cart good-icon-cart'>
+      <text class='good-cart-num' wx:if="{{cartNum > 0}}">{{cartNum}}</text>
+    </text>
+  </view>
+  <view class='good-foot-btn {{goodInfo.sku_stock == 0 ? "canNoBuy-foot-btn" : ""}}' catchtap='cartAdd' data-item='{{goodInfo}}' >{{goodInfo.sku_stock == 0 ? "已售罄" : "加入购物车"}}</view>
+</view>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

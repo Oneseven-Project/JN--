@@ -1,0 +1,23 @@
+<!--pages/redRule/redRule.wxml-->
+<view class='redRule-box'>
+  <view class='title red-rule-text'>Q1：为什么有的红包要满一定金额才可以使用，有的红包则不用呢？</view>
+
+  <view class='red-rule-text'>
+    江楠鲜品支持满减红包和无门槛红包两种红包。
+    满减红包需满足指定金额方即可使用；
+    无门槛红包无消费限制，当订单金额低于活着等于无门槛红包面额时，仍需支持0.01元。
+  </view>
+
+  <view class='title red-rule-text'>Q2：一个订单可以使用多个红包吗？</view>
+
+  <view class='red-rule-text'>不能，单笔订单只能使用一个红包，不支持同时使用多个，用红包后差额不找零，不兑换现金。</view>
+
+  <view class='title red-rule-text'>Q3：下单时用了红包，但是后来取消订单了，会返还红包吗？</view>
+
+  <view class='red-rule-text'>使用红包的订单若产生取消订单，需订单内所有商品均退货退款成功，且红包仍在有效期内，可返回红包，返回后的红包有效期保持不变；
+  若只申请部分退款且退款成功的，红包将不予退回；
+  退回红包如已过期，则不再补发；</view>
+
+  <view class='title red-rule-text'>Q4：红包过了有效期能继续使用吗？</view>
+  <view class='red-rule-text'>不能，请在有效期内使用红包，未使用的红包过期后，将自动作废，不再补发；</view>
+</view>

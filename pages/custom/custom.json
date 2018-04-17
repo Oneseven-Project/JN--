@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "jn-template": "/widget/template/template",
+    "jn-toast": "/widget/toast/toast"
+  }
+}

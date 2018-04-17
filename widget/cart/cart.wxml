@@ -1,0 +1,5 @@
+<!--widget/cart/cart.wxml-->
+<view class='cart-box' catchtap='toCart'>
+  <text class='iconfont icon-Cart cart-icon'></text>
+  <view class='cart-num' wx:if="{{cartNum > 0}}">{{cartNum}}</view>
+</view>

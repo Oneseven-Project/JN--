@@ -1,0 +1,18 @@
+/* widget/icon/icon.wxss */
+.jn-icon{
+  padding: 0 10rpx;
+}
+.jn-icon-item{
+  display:flex;
+  flex:1;
+  flex-direction: column;
+  align-items:center;
+  justify-content:top;
+}
+.jn-icon-image{
+  max-width: 50rpx;
+}
+.jn-icon-text{
+  margin-top: 16rpx;
+  font-size: 24rpx;
+}

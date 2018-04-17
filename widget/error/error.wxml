@@ -1,0 +1,9 @@
+<!--widget/error/error.wxml-->
+<view class="err-page"></view>
+<view class='err-box'>
+  <image src='../../assets/imgs/err.png' class='err-img' mode='widthFix' lazy-load></image>
+  <view class='err-text'>哎呀，出问题了</view>
+  <navigator url="../../pages/index/index" open-type="switchTab">
+     <button class='err-btn'>返回首页</button> 
+  </navigator>
+</view>

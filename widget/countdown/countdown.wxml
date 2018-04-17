@@ -1,0 +1,14 @@
+<!--widget/countdown/countdown.wxml-->
+<block wx:if="{{isDown == 1}}">
+  <text class='count-default' wx:if="{{minute || second}}">{{hour}}:{{minute}}:{{second}}</text>
+</block>
+  <block wx:else>
+<view class='count-down-timer'>
+  <text class='count-down'>{{hour}}</text>
+  <text class='count-down-point'>:</text> 
+  <text class='count-down'>{{minute}}</text>
+  <text class='count-down-point'>:</text>
+  <text class='count-down'>{{second}}</text>
+</view>
+</block>
+

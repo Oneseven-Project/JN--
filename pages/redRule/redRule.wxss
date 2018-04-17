@@ -1,0 +1,17 @@
+/* pages/redRule/redRule.wxss */
+.redRule-box{
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  font-size: 24px;
+}
+.red-rule-text{
+  font-size: 28rpx;
+  color: #332500;
+  margin-top: 20rpx;
+}
+.title{
+  font-size: 28rpx;
+  color: #332500;
+  margin-top: 50rpx;
+  font-weight: 600;
+}

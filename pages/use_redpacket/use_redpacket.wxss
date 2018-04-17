@@ -1,0 +1,132 @@
+/* pages/use_redpacket/use_redpacket.wxss */
+/* 红包列表  */
+.redpacket-list{
+  background: #fafafa;
+  min-height: 100vh;
+  padding: 0 40rpx;
+  padding-bottom: 20rpx;
+  overflow: hidden; 
+}
+.redpacket-list-item{
+  margin-top: 30rpx;
+  position: relative;
+  min-height: 260rpx;
+}
+.list-item-foot{
+  position: absolute;
+  left: 0;
+  bottom: 20rpx;
+  padding: 0 40rpx;
+  z-index: 2;
+  font-size: 20rpx;
+  color: #999;
+}
+.redpacket-bgimg{
+  width: 100%;
+  height: 260rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.redpacket-bgimg-img{
+  width: 100%;
+  height: 260rpx;
+}
+
+.list-item-content{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  padding: 0 40rpx;
+  height: 260rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row;
+}
+
+/*左侧  */
+.item-content-left{
+  min-width: 210rpx;
+  padding-top: 50rpx;
+  color: #FF9C2B;
+}
+.item-red-conunt{
+  margin: 0 auto;
+  margin-left: 30rpx;
+}
+.item-red-icon{
+  font-size: 32rpx;
+}
+.item-red-num {
+  font-size: 100rpx;
+}
+
+.item-content-center{
+  flex: 1;
+  padding-top: 50rpx;
+  margin-left: 20rpx;
+}
+.red-text-desc-title{
+  font-size: 24rpx;
+  color: #332500;
+}
+.red-text-desc{
+  color: #999;
+  font-size: 20rpx;
+  font-weight: normal;
+}
+
+.item-content-right{
+  width: 210rpx;
+  position: relative;
+}
+.item-check-box{
+  position: absolute;
+  right: 0;
+  top: 25%;
+}
+
+/* 没有可用红包  */
+.no-redpacket{
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%);
+  text-align: center;
+}
+.no-redpacket-img{
+  width: 260rpx;
+  height: 260rpx;
+}
+.no-redpacket-text{
+  font-size: 32rpx;
+  color: #332500;
+  margin: 0 auto;
+}
+.back-home-btn{
+  font-size: 24rpx;
+  color: #332500;
+  width: 176rpx;
+  text-align: center;
+  border: 2rpx solid #999;
+  border-radius: 100rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+/* 选择框  */
+.checkbox-selected{
+  font-size: 36rpx;
+  color: #FF9C2B;
+}
+.checkbox-noSelected{
+  font-size: 36rpx;
+  color: #999;
+}
+.checkbox-disable{
+  font-size: 36rpx;
+  color: #e6e6e6;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "jn-goodlist": "/widget/goodlist/goodlist",
+    "jn-toast": "/widget/toast/toast",
+    "jn-err": "/widget/error/error"
+  }
+}

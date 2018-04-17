@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "jn-toast": "../../widget/toast/toast",
+    "jn-banner": "../../widget/banner/banner"
+  },
+  "navigationBarTitleText": "我的"
+}

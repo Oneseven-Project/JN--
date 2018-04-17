@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "jn-toast": "/widget/toast/toast"
+  }
+}

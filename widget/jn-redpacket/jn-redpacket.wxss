@@ -1,0 +1,187 @@
+/* widget/redpacket/jn-redpacket.wxss */
+
+.jn-redpacket{
+  width: 100vw;
+  padding: 20rpx 0;
+}
+/* 样式1   单列*/
+.jn-redP-style1{
+  position: relative;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.jn-style1-item{
+  position: relative;
+  width: 100%;
+  height: 200rpx;
+  margin-top: 40rpx; 
+}
+.jn-style1-item:first-child{
+  margin-top: 20rpx;
+}
+.style1-item-Imgbox{
+  position: absolute;
+  width: 100%;
+  height: 200rpx;
+  left: 0;
+  top: 0;
+}
+.style1-item-bgImg{
+  width: 100%;
+  height: 200rpx;
+}
+.style1-itme-content{
+  position: absolute;
+  width: 100%;
+  height: 200rpx;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+}
+.style1-content-left{
+  flex: 1;
+  padding: 24rpx 40rpx;
+  box-sizing: border-box;
+  font-size: 20rpx;
+}
+.style1-red-title{
+  color: #FDDEAE;
+  font-size: 36rpx;
+  margin-bottom: 10rpx;
+}
+.style1-red-subtitle{
+  color: #FDDEAE;
+}
+.style1-red-tap{
+  color: #fff;
+}
+.style1-content-right{
+  width: 210rpx;
+  text-align: center;
+}
+.style1-content-right-icon{
+  font-size: 22rpx;
+  color: #DA1B2A;
+}
+.style1-content-right-num{
+  font-size: 100rpx;
+  color: #DA1B2A;
+}
+
+
+/* 样式二  */
+.jn-redp-style2{
+  position: relative;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.style2-item{
+  position: relative;
+  height: 154rpx;
+  width: 100%;
+  margin-top: 20rpx;
+}
+.style2-item-left{
+  width: 308rpx;
+  height: 154rpx;
+  position: relative;
+  float: left;
+  margin-left: 52rpx;
+  margin-top: 20rpx;
+}
+.style2-item-left:first-child{
+   margin-left: 0;
+   margin-top: 0; 
+}
+.style2-item-left:nth-child(2){
+  margin-top: 0
+}
+.style2-item-left:nth-child(odd){
+   margin-left: 0;
+}
+.style2-item-box{
+  width: 308rpx;
+  height: 154rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.style2-item-bgimg {
+  width: 308rpx;
+  height: 154rpx;
+}
+.style2-item-content {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 24rpx;
+  color: #FDDEAE;
+  padding: 20rpx;
+}
+.font-big{
+  font-size: 36rpx;
+}
+
+/* 样式三  */
+.jn-redp-style3{
+  position: relative;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.style3-item-row{
+  position: relative;
+  width: 100%;
+  height: 216rpx;
+  margin-top: 20rpx;
+}
+.style3-item{
+  height: 216rpx;
+  width: 180rpx;
+  float: left;
+  position: relative;
+  margin-left: 64rpx;
+  margin-top: 20rpx;
+}
+.style3-item:first-child {
+  margin-left: 0;
+}
+.style3-item:nth-of-type(3n + 1){
+  margin-left: 0;
+}
+.style3-item {
+  height: 216rpx;
+  width: 180rpx;
+  position: relative;
+  float: left;
+}
+.style3-item-bgimg{
+  height: 216rpx;
+  width: 180rpx;
+}
+.style3-item-content{
+  height: 216rpx;
+  width: 180rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 20rpx;
+  color: #FDDEAE;
+  text-align: center;
+  padding-top: 20rpx;
+}
+.style3-font-big{
+  font-size: 48rpx;
+}
+
+/* 已领完  */
+.bgFFF{
+  color: #fff;
+}
+.bgGary{
+  color: #D0D0D0;
+}

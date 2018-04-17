@@ -1,0 +1,10 @@
+/* pages/storeList/storeList.wxss */
+.store-list-imgbox{
+  width: 100vw;
+  /* height: 200rpx; */
+  position: relative;
+  overflow: hidden;
+}
+.store-list-img{
+  width: 100%;
+}

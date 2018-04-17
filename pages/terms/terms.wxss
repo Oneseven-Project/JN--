@@ -1,0 +1,5 @@
+/* pages/terms/terms.wxss */
+.terms{
+ padding: 40rpx;
+ font-size: 24rpx;
+}

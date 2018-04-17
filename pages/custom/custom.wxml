@@ -1,0 +1,4 @@
+<!--pages/custom/custom.wxml-->
+<wxs src="../../assets/wxs/style.wxs" module="style" />
+<jn-template class="jn-template" item="{{templateConf}}" tempData="{{templateData}}" style="{{style.flex(child.col)}}"></jn-template>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

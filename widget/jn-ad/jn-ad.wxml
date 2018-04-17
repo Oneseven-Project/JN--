@@ -1,0 +1,6 @@
+<!--widget/jn-ad/jn-ad.wxml-->
+<view class='jn-ad' catchtouchmove>
+  <view class='jn-ad-box'>
+      <image src=''></image>
+  </view>
+</view>

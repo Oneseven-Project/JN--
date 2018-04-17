@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<wxs src="../../assets/wxs/style.wxs" module="style" />
+
+ <view class='current-city' bindtap='reLocation'>
+  <view class="city-contenter">
+    <image src='../../assets/imgs/Loaction2424.png' class='home-loaction-icon'></image>
+    <text>{{location}}</text> 
+  </view>
+  <view class='location-contenter-right'>
+    <image src='../../assets/imgs/Triangle.png' class='home-loaction-tangle' mode='widthFix'></image>
+  </view>
+</view> 
+
+<view class='{{moduleItem.type && moduleItem.type == 15 ? "home-has-nopadding" : "home-has-padding"}}'>
+  <jn-template class="jn-template" item="{{templateConf}}" isCart="{{1}}" tempData="{{templateData}}"   style="{{style.flex(templateConf.col)}}"></jn-template>
+</view>
+
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast> 
+
+<!-- 弹窗广告  -->
+<view class='jn-ad' catchtouchmove wx-if="{{isShow}}">
+  <view class='jn-ad-box'>
+    <image src='{{adImg}}' mode="widthFix" bindtap='adClick' class='ad-img'></image>
+    <view class='jn-ad-close' bindtap='closeAd'>
+      <text class='iconfont icon-MenuClose jn-ad-close-icon'></text>
+    </view>
+  </view>
+</view>
+ 
+
+

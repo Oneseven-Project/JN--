@@ -1,0 +1,29 @@
+<!--pages/search/search.wxml-->
+<view class='classify'>
+  <view class='classify-left'>
+    <block wx:for="{{classifys}}" wx:key='item' wx:for-index="idx" wx:for-item="classify">
+      <view class='classify-left-item {{idx == activeIndex ? "activated" : ""}}'  bindtap='chooseClasify' data-index='{{idx}}' data-item='{{classify}}'>
+        <text class='classify-left-text'>{{classify.label}}</text>
+        <view class='activatedTag' wx:if="{{idx == activeIndex}}"></view>
+      </view>
+    </block>
+  </view>
+  <view class='classify-right'>
+    <view class='classify-right-title'>
+      <text class='classify-title-text jn-1px-b'>{{title}}</text>
+      <text class='classify-title-more jn-1px-b' bindtap='seeMore'>查看更多</text>
+      <text class='iconfont icon-Arrow'></text>
+    </view>
+    <view class='classify-right-content'>
+      <block wx:for="{{classifyItems}}" wx:key="item" wx:for-index="i" wx:for-item="detailItem">
+        <view class="classify-right-detail" bindtap='toClassList' data-item='{{detailItem}}'>
+          <view class='classify-item-imgBox'>
+            <image src='{{detailItem.logo ? detailItem.logo : "../../assets/imgs/fruit.jpg"}}' class='classify-item-img' binderror="bindErrImg" data-imgIndex="{{idx}}"></image>
+          </view>
+          <text class='classify-item-name'>{{detailItem.label}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <jn-toast class="toast" text="{{toastText}}" ></jn-toast>
+</view>

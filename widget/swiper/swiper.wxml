@@ -1,0 +1,81 @@
+<!--widget/swiper/swiper.wxml-->
+<wxs src="../../assets/wxs/price.wxs" module="price" />
+<view class='jn-swiper' wx:if="{{swiperList && swiperList.length > 0}}">
+  <block wx:if="{{(item.module === 'swiper-sm' && item.conf && item.conf.type && item.conf.type === 'goods') || swiperList && swiperList.length > 0}}">
+    <view class='jn-swiper-sm'>
+      <view class='jn-swiper-head' wx:if="{{item.conf.title || item.conf.url}}">
+        <view class='jn-swiper-title'> 
+          <view>
+              <view class='jn-swiper-mainTitle'>{{item.conf.title}}</view>
+              <block wx:if="{{countTime && (countTime - currentTime) > 0}}"> 
+                <jn-countdown time="{{countTime}}" class="countdown"></jn-countdown>
+              </block> 
+          </view>
+          <view class='jn-swiper-subTitle' wx:if="{{item.conf.sub}}">{{item.conf.sub}}</view>
+        </view>
+        <view class='jn-swiper-more' wx:if="{{item.conf.url}}" bindtap='seeMore' data-getUrl="{{item.conf.url}}">查看更多</view>
+      </view>
+        <scroll-view class="jn-swiper-scroll" scroll-x>
+           <view class="jn-swiper-wrap"> 
+            <block wx:for="{{swiperList}}" wx:key="index" wx:for-index="index" wx:for-item="swipeItem">
+              <view class="swiper-item" bindtap='itemClick' data-item="{{swipeItem}}">
+                <view class='swiper-item-imgbox'>
+                  <image src='{{swipeItem.sku_img ? swipeItem.sku_img : "/assets/imgs/fruit.jpg"}}' class='swiper-item-img' lazy-load="{{true}}" binderror="bindErrImg" data-imgIndex="{{index}}"></image>
+                  <text class='swiper-sale-limit' wx:if="{{swipeItem.limit_total}}">限购{{swipeItem.limit_total}}件</text>
+                  <view class='swiper-sale-out' wx:if="{{swipeItem.leaving_stock == 0}}">
+                    <view class='sale-out-cn-txt'>已售完</view>
+                    <view class='sale-out-en-txt'>SOLD OUT</view>
+                  </view>
+                </view>
+                <block wx:if="{{countTime}}">
+                  <view class='swiper-item-price'>
+                    <text class='swiper-item-price-tag'>￥</text>
+                    <text class='swiper-item-price-intNum'>{{price.priceFix(swipeItem.sale_price).intNum}}</text>
+                    <text class='swiper-item-price-tag'>.{{price.priceFix(swipeItem.sale_price).floatNum}}</text>
+                    <text class='swiper-item-originPrice'>￥{{price.priceFix(swipeItem.purchase_price).allNum}}</text>
+                  </view>
+                  <view class='swiper-item-title'>{{swipeItem.sku_name}}</view>
+                </block>
+                <block wx:else>
+                  <view class='swiper-item-title'>{{swipeItem.sku_name}}</view>
+                  <view class='swiper-item-price'>
+                    <text class='swiper-item-price-tag'>￥</text>
+                    <text class='swiper-item-price-intNum'>{{price.priceFix(swipeItem.sale_price).intNum}}</text>
+                    <text class='swiper-item-price-tag'>.{{price.priceFix(swipeItem.sale_price).floatNum}}</text>
+                    <text class='swiper-item-originPrice'>￥{{price.priceFix(swipeItem.purchase_price).allNum}}</text>
+                  </view>
+                </block>
+              </view>
+            </block>
+           </view> 
+        </scroll-view>
+    </view>
+  </block>
+  <block wx:if="{{item.module === 'swiper-md'}}">
+    <view class='jn-swiper-md'>
+      <view class='jn-swiper-head'>
+        <view class='jn-swiper-title'> 
+          <view>
+              <view class='jn-swiper-mainTitle'>{{item.conf.title}}</view>
+              <block wx:if="{{countTime && (countTime - currentTime) > 0}}"> 
+                <jn-countdown time="{{countTime}}" class="countdown"></jn-countdown>
+              </block> 
+          </view>
+          <view class='jn-swiper-subTitle' wx:if="{{item.conf.sub}}">{{item.conf.sub}}</view>
+        </view>
+        <view class='jn-swiper-more' wx:if="{{item.conf.url}}" bindtap='seeMore' data-getUrl="{{item.conf.url}}">查看更多</view>
+      </view>
+      <scroll-view class="jn-swiper-scroll" scroll-x>
+          <view class="jn-swiper-wrap"> 
+          <block wx:for="{{item.conf.items}}" wx:key="index" wx:for-index="index" wx:for-item="mdItem">
+           <view class="swiper-item-md" bindtap='itemClick' data-item="{{mdItem}}"> 
+            <image src='{{mdItem.pic}}' class='swiper-item-mdImg' mode="widthFix" lazy-load="{{true}}"></image>
+           </view> 
+          </block>
+          </view> 
+      </scroll-view>
+    </view>
+  </block>
+  <view class='jn-1px-b jn-swiper-1px'></view>
+</view>
+

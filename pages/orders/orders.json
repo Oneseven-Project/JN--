@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "jn-toast": "/widget/toast/toast",
+    "count-dowm": "/widget/countdown/countdown"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "onReachBottomDistance": 0
+}

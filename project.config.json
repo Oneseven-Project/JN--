@@ -1,0 +1,166 @@
+{
+	"description": "江鲜生官方小程序。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wx0826a56be5dd57d6",
+	"projectname": "%E6%B1%9F%E6%A5%A0%E7%94%9F%E9%B2%9C%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "手机号码登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录方式",
+					"pathName": "pages/loginType/loginType",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "自定义模板",
+					"pathName": "pages/custom/custom",
+					"query": "id=90"
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/classify/classify",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分类列表页",
+					"pathName": "pages/classifyList/classifyList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "通用列表页",
+					"pathName": "pages/goodslist/goodslist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商品详情页",
+					"pathName": "pages/goods/goods",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "城市选择",
+					"pathName": "pages/cityChoose/cityChoose",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "门店列表",
+					"pathName": "pages/storeList/storeList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "结算页",
+					"pathName": "pages/statement/statement",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/address/address",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加地址",
+					"pathName": "pages/address_add/address_add",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "添加地址",
+					"pathName": "pages/orders/orders",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "订单详情页",
+					"pathName": "pages/orderdetail/orderdetail",
+					"query": ""
+				},
+				{
+					"id": 18,
+					"name": "分享模式",
+					"pathName": "pages/goods/goods",
+					"query": "skuId=270&spuId=96",
+					"scene": "1007"
+				},
+				{
+					"id": -1,
+					"name": "红包规则",
+					"pathName": "pages/redRule/redRule",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "红包",
+					"pathName": "pages/redpacket/redpacket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "使用选择红包",
+					"pathName": "pages/use_redpacket/use_redpacket",
+					"query": ""
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "jn-tab": "/widget/tab/tab",
+    "jn-template": "/widget/template/template"
+  }
+}

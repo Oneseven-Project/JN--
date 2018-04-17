@@ -1,0 +1,2 @@
+<!--widget/showcase/showcase.wxml-->
+<image src="{{item.conf.pic}}" mode="widthFix" style="width: 100%;" lazy-load="{{true}}" bindtap='goto' data-item='{{item.conf}}'></image>

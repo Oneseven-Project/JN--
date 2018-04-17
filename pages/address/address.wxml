@@ -1,0 +1,38 @@
+<!--pages/address/address.wxml-->
+<wxs src="../../assets/wxs/phonenum.wxs" module="phone" />
+
+<view class='jn-address {{addressList.length > 0 ? "" : "address-bg-white"}} jn-1px-t'>
+  <block wx:if="{{addressList.length > 0}}">
+    <block wx:for="{{addressList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item">
+      <view class='address-info jn-1px-b'>
+        <view class='address-head' bindtap='chooseAddress' data-item='{{item}}'>
+          <text class='address-head-man'>{{item.name}}</text>
+          <text class='address-head-cellphone'>{{phone.phone(item.phone)}}</text>
+        </view>
+        <view class='address-desc' bindtap='chooseAddress' data-item='{{item}}'>{{item.full_addr}}</view>
+        <view class='address-foot jn-1px-t'>
+          <view class='address-foot-left'>
+            <checkbox class='address-checkbox' checked="{{item.is_default}}" bindtap='setDefault' data-item='{{item}}'>默认地址</checkbox>
+          </view>
+          <view class='address-foot-right'>
+            <text class='address-edit-icon iconfont icon-Edit' bindtap='toAdressAdd' data-item='{{item}}'></text>
+            <text class='address-edit' bindtap='toAdressAdd' data-item='{{item}}'>编辑</text>
+            <text class='address-del-icon iconfont icon-Clean' bindtap='delAdress' data-item='{{item}}'></text>
+            <text class='address-del' bindtap='delAdress' data-item='{{item}}'>删除</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='jn-address-footer jn-1px-t'>
+      <view class='jn-address-footer-btn' bindtap='toAdressAdd'>新增地址</view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='no-address-box'>
+      <image class='no-address-img' src='../../assets/imgs/addressEmpty.png'></image>
+      <view class="no-address-text">你还没有收货地址哦</view>
+      <button class='back-home-btn' bindtap='toAdressAdd'>新增地址</button>
+    </view>
+  </block>
+</view>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

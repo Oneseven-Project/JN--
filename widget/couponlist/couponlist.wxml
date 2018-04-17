@@ -1,0 +1,4 @@
+<!--widget/couponlist/couponlist.wxml-->
+<view class='jn-coupon-list'>
+  <image src="{{item.conf.pic}}" mode="widthFix" style="width: 100%;" lazy-load="{{true}}" bindtap='drawCoupon' data-item='{{item.conf}}'></image>
+</view>

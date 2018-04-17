@@ -1,0 +1,54 @@
+<!--widget/redpacket/jn-redpacket.wxml-->
+<view class='jn-redpacket'>
+  <!-- 样式2 两列 -->
+  <view class='jn-redp-style2' wx:if="{{item && item.style == 2}}">
+    <view class='style2-item-left' wx:for="{{redlist}}" wx:key="index" bindtap='getCoupon' data-coupons='{{item}}'>
+      <view class='style2-item-box'>
+        <image src='{{item.bgImg}}' class='style2-item-bgimg'></image>
+      </view>
+      <view class='style2-item-content {{itme.user_coupon_apply_status == 3 ? "bgFFF" : ""}}'>
+        <view><text>￥</text><text class='font-big'>{{item.coupon_amt}}</text><text>{{item.name}}</text></view>
+        <view>满{{item.applicable_amt}}可用</view>
+        <view>{{item.description}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 样式3 三列 -->
+  <view class='jn-redp-style3' wx:elif="{{item && item.style == 3}}">
+    <view class='style3-item-row'>
+      <view class='style3-item' wx:for="{{redlist}}" wx:key="index" bindtap='getCoupon' data-coupons='{{item}}'>
+        <view class='style3-item-bgbox'>
+          <image src='{{item.bgImg}}' class='style3-item-bgimg'></image>
+        </view>
+        <view class='style3-item-content {{itme.user_coupon_apply_status == 3 ? "bgFFF" : ""}}'>
+          <view class=''><text>￥</text><text class='style3-font-big'>{{item.coupon_amt}}</text></view>
+          <view class=''>满{{item.applicable_amt}}可用</view>
+          <view class=''>{{item.description}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+    <!-- 样式1 单行 -->
+  <view class='jn-redP-style1' wx:else>
+    <view class='jn-style1-item' wx:for="{{redlist}}" wx:for-index="index" wx:for-item="redpacket" wx:key="index" bindtap='getCoupon' data-coupons='{{item}}'>
+      <view class='style1-item-Imgbox'>
+        <image src='{{item.bgImg}}' class='style1-item-bgImg'></image>
+      </view>
+      <view class='style1-itme-content'>
+        <view class='style1-content-left'>
+          <view class='style1-red-title'>{{item.name}}</view>
+          <view class='style1-red-subtitle'>满{{item.applicable_amt}}可用</view>
+          <view class='style1-red-subtitle'>有效期至{{item.applicable_to}}</view>
+          <view class='style1-red-tap'>数量有限，领完即止</view>
+        </view>
+        <view class='style1-content-right {{itme.user_coupon_apply_status == 3 ? "bgGary" : ""}}'>
+          <text class='style1-content-right-icon'>￥</text>
+          <text class='style1-content-right-num'>{{item.coupon_amt}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

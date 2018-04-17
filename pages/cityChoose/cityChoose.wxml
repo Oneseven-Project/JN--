@@ -1,0 +1,43 @@
+<wxs src="../../assets/wxs/phonenum.wxs" module="phone" />
+<view class="city-bg-gray">当前定位</view>
+<view class='city-current-location'>
+  <block wx:if="{{currentCity}}">
+    <view>
+      <image src='../../assets/imgs/Loaction2424.png' class='city-img-loaction'></image>
+      <text class='city-current-city' bindtap='reCurrentCity'>{{currentCity}}</text>
+      <image src='../../assets/imgs/refresh.png' class='city-img-refresh' bindtap='relocation'></image>
+    </view>
+  </block>
+  <block wx:if="{{failCity}}">
+    <view>
+      <image src='../../assets/imgs/Loaction2424.png' class='city-img-loaction'></image>
+      <text class='city-current-city'>无法定位当前城市</text>
+      <image src='../../assets/imgs/refresh.png' class='city-img-refresh' bindtap='relocation'></image>
+    </view>
+  </block>
+  <block wx:if="{{loading}}">
+    <view>
+      <image src='../../assets/imgs/Loaction2424.png' class='city-img-loaction'></image>
+      <text class='city-current-loading'>正在获取...</text>
+      <image src='../../assets/imgs/refresh.png' class='city-img-refresh' bindtap='relocation'></image>
+    </view>
+  </block>
+</view>
+<view class="city-bg-gray" wx:if="{{shipping.length > 0}}">我的收货地址</view>
+<view class='city-shipping-Address'>
+  <block wx:for="{{shipping}}" wx:key="index" wx:for-index="index" wx:for-item="my">
+    <view class='city-my {{index == (shipping.length - 1) ? "" : "jn-1px-b" }}' data-item='{{my}}' bindtap='chooseAddress'>
+      <text class='city-my-name'>{{my.name}}</text>
+      <text class='city-my-phone'>{{phone.phone(my.phone)}}</text>
+      <view class='city-my-address'>{{my.full_addr}}</view>
+    </view>
+  </block>
+</view>
+<view class="city-bg-gray">选择已开通的服务城市</view>
+<view class='city-had'>
+  <block wx:for="{{hadCitys}}" wx:key="idx" wx:for-item="city" wx:for-index="idx">
+    <view class='city-had-citys jn-1px-b' data-item='{{city}}' bindtap='chooseCity'>{{city.area_name}}</view>
+  </block>
+</view>
+<view class='city-more'>更多城市正在努力拓展中，敬请期待</view>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>

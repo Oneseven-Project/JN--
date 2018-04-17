@@ -1,0 +1,4 @@
+<!--widget/toast/toast.wxml-->
+<view class="jn-toast" wx:if="{{isShow}}" animation="{{animationData}}">
+    <text class='jn-toast-text'>{{text}}</text>
+</view>

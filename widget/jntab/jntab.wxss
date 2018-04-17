@@ -1,0 +1,33 @@
+/* widget/jn-tab/jn-tab.wxss */
+@import "/assets/style/1px.wxss";
+.jn-tab-header{
+  width: 100vw;
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  flex-direction: row;
+}
+.jn-tab-item{
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #332500;
+  position: relative;
+}
+.activatedTab{
+  color: #FF9C2B;
+}
+.jn-tab-item-active{
+  position: absolute;
+  left: 50%;
+  min-width: 2em;
+  max-width: 7em;
+  transform: translateX(-50%);
+  bottom: 0rpx;
+  height: 4rpx;
+  background: #FF9C2B;
+  z-index: 9;
+}
+.jn-tab-content{
+  width: 100vw;
+}

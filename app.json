@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/classify/classify",
+    "pages/cart/cart",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/loginType/loginType",
+    "pages/custom/custom",
+    "pages/classifyList/classifyList",
+    "pages/goods/goods",
+    "pages/terms/terms",
+    "pages/cityChoose/cityChoose",
+    "pages/storeList/storeList",
+    "pages/statement/statement",
+    "pages/address/address",
+    "pages/address_add/address_add",
+    "pages/orders/orders",
+    "pages/orderdetail/orderdetail",
+    "pages/redRule/redRule",
+    "pages/redpacket/redpacket",
+    "pages/use_redpacket/use_redpacket"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "江楠生鲜",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#FF9C2B",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/imgs/Home.png",
+        "selectedIconPath": "assets/imgs/HomeOn.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "assets/imgs/Category.png",
+        "selectedIconPath": "assets/imgs/CategoryOn.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "assets/imgs/Cart.png",
+        "selectedIconPath": "assets/imgs/CartOn.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "assets/imgs/My.png",
+        "selectedIconPath": "assets/imgs/MyOn.png"
+      }
+    ]
+  }
+}

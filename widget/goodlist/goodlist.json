@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "jn-toast": "/widget/toast/toast",
+    "jn-cart": "/widget/cart/cart"
+  }
+}

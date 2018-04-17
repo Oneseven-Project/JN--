@@ -1,0 +1,51 @@
+<template name="cart_list">
+  <wxs src="../../assets/wxs/price.wxs" module="price" />
+  <view class='cart-list'>
+    <view class='cart-list-title jn-1px-b'>
+      <text class='iconfont icon-Radio_Selected checkbox-selected' wx:if="{{listInfo.list_is_select && !listInfo.list_is_disable}}" data-isselect='{{listInfo.list_is_select}}' data-isdisable='{{listInfo.list_is_disable}}'  data-cartIndex="{{cartIndex}}" catchtap='listCheck'></text>
+      <text class='iconfont icon-Raido_Normal checkbox-noSelected' wx:elif="{{!listInfo.list_is_select && !listInfo.list_is_disable}}" data-isselect='{{listInfo.list_is_select}}' data-isdisable='{{listInfo.list_is_disable}}'  data-cartIndex="{{cartIndex}}" catchtap='listCheck'></text>
+      <text class='iconfont icon-Raido_Disable checkbox-disable' wx:if="{{listInfo.list_is_disable}}"></text>
+      <text class='cart-list-title-text'>{{listInfo.seller_name}}</text>
+    </view>
+    <view class='cart-list-content'>
+      <block wx:for="{{listInfo.item_list}}" wx:key="idx" wx:for-index="idx" wx:for-item="good">
+        <view class='cart-list-goods {{idx!==listInfo.item_list.length-1 ? "jn-1px-b" : ""}}'>
+          <view class='cart-list-checkbox'>
+            <text class='iconfont icon-Radio_Selected checkbox-selected' wx:if="{{good.is_select && !good.is_disable}}" catchtap='goodsCheck' data-item="{{good}}" data-index='{{idx}}' data-cartIndex='{{cartIndex}}'></text>
+            <text class='iconfont icon-Raido_Normal checkbox-noSelected' wx:elif="{{!good.is_select && !good.is_disable}}" catchtap='goodsCheck' data-item="{{good}}" data-index='{{idx}}' data-cartIndex='{{cartIndex}}'></text>
+            <text class='iconfont icon-Raido_Disable checkbox-disable' wx:if="{{good.is_disable}}"></text>
+          </view>
+          <view class='cart-list-imgbox'>
+            <view class='good-img-mask' wx:if="{{good.is_disable}}"></view>
+            <image src="{{good.item.sku_img ? good.item.sku_img : '../../assets/imgs/fruit.jpg'}}" class='cart-list-good-img' catchtap='toGoodDetial' data-item='{{good.item}}' lazy-load="{{true}}"></image>
+          </view>
+          <view class='cart-list-good-info'>
+            <view class='cart-good-title'>
+              <view class='cart-good-title-name'>{{good.item.spu_name}}</view>
+              <text class='iconfont icon-Clean' data-item='{{good}}' data-cartindex="{{cartIndex}}" catchtap='delgood'></text>
+            </view>
+            <view class='cart-good-subtitle'>{{good.item.sku_name}}</view>
+            <view class='cart-good-price'>
+              <block wx:if="{{good.item.stock > 0}}">
+                <text class='cart-item-price-icon'>￥</text>
+                <text class='cart-item-price-num'>{{price.priceFix(good.item.sale_price).intNum}}.</text>
+                <text class='cart-item-price-icon'>{{price.priceFix(good.item.sale_price).floatNum}}</text>
+              </block>
+              <block wx:else><text class='cart-item-price-saleout'>已售罄</text></block>
+              <view class='cart-item-addCart' wx:if="{{!good.is_disable}}">
+                 <text class='cart-item-goodleaving' wx:if="{{good.item.quantity >= good.item.stock}}">仅剩{{good.item.stock}}件</text> 
+                <text class='iconfont icon-Raido_Disable cart-item-btn {{good.item.quantity >= good.item.stock ? "cart-item-disable" : ""}}' catchtap='cartAdd' data-item='{{good.item}}' data-index='{{idx}}'>
+                  <text class='iconfont icon-Plus cart-item-btnPlus {{good.item.quantity >= good.item.stock ? "cart-item-btnPlus-disable": ""}}'></text>
+                </text>
+                <text class='cart-item-btn cart-item-num' wx:if='{{true}}'>{{good.item.quantity}}</text>
+                <text class='iconfont icon-Raido_Normal cart-item-btn cart-item-cirlcleSub' wx:if='{{good.item.quantity > 0}}' catchtap='cartReduce' data-item='{{good.item}}' data-index='{{idx}}'>
+                  <text class='iconfont icon-Sub cart-item-btnSub'></text>
+                </text>
+            </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>

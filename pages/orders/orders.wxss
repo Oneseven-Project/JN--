@@ -1,0 +1,276 @@
+/* pages/orders/orders.wxss */
+.orders-tabs{
+  height: 70rpx;
+  line-height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 11;
+  background: #fff;
+}
+.orders-tab-item{
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+  color: #332500;
+  position: relative;
+}
+.activated-tab-item{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 4rpx;
+  min-width: 3em;
+  background: #FF9C2B;
+}
+.activated-tab{
+  color: #FF9C2B;
+}
+.orders-page{
+  padding-top: 70rpx; 
+  position: relative;
+  background: #fafafa;
+  padding-bottom: 104rpx;
+  min-height: calc(100vh - 70rpx);
+}
+.orders-page-hasfoot{
+  padding-bottom: 130rpx;
+}
+
+.orders-list{
+  position: relative;
+}
+.orders-item{
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.order-item-header{
+  height: 85rpx;
+  line-height: 85rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+  padding: 0 40rpx;
+}
+.oder-item-left{
+  flex: 1;
+  color: #999;
+}
+.oder-item-right{
+  text-align: right;
+}
+.order-item-redText{
+  color: #FF5344;
+  font-size: 24rpx;
+}
+.order-checkbox{
+  margin-right: 20rpx;
+}
+/* checkbox  */
+.checkbox-selected{
+  font-size: 36rpx;
+  color: #FF9C2B;
+}
+.checkbox-noSelected{
+  font-size: 36rpx;
+  color: #999;
+}
+
+.orders-containt{
+  position: relative;
+  width: 100%;
+}
+.orders-good{
+  padding: 30rpx 40rpx;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.order-good-info{
+  flex: 1;
+}
+.orders-good-imgbox{
+  width: 120rpx;
+  height: 120rpx;
+  position: relative;
+  margin-right: 20rpx;
+}
+.orders-good-img{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.order-good-title{
+  font-size: 28rpx;
+  color: #332500;
+  line-height: 36rpx;
+  max-height: 72rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -moz-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.order-good-num-price{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 25rpx;
+}
+.order-good-price{
+ flex: 1;
+ font-size: 28rpx;
+ color: #FF9C2B;
+}
+.order-good-num{
+  text-align: right;
+  font-size: 28rpx;
+  color: #332500;
+}
+.order-good-num-icon{
+  margin-right: 20rpx;
+}
+.orders-footer{
+  padding: 30rpx 40rpx;
+}
+.orders-num-total{
+  text-align: right;
+  font-size: 28rpx;
+  color: #332500;
+}
+.orders-good-tatal{
+  margin-right: 20rpx;
+}
+.orders-good-total-money{
+  color: #FF9C2B;
+}
+.orders-btns{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.orders-btns-left{
+  flex: 1;
+}
+.orders-btns-btn{
+  color: #fff;
+  background: #FF9C2B;
+  text-align: center;
+  padding: 0 20rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 22rpx;
+  border-radius: 100rpx;
+  /* max-width: 168rpx; */
+  float: right;
+}
+.orders-btns-leftime{
+  display: inline-block;
+  background: #FF9C2B;
+  margin-left: 10rpx;
+  min-width: 34rpx;
+} 
+
+/* 多件商品情况  */
+.jn-order-scroll{
+  width: 100%;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+.order-swiper-wrap{
+  box-sizing: border-box;
+  padding-left: 40rpx;
+  max-width: 9999vw;
+  white-space: nowrap;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+.orders-swiper-item{
+  display: inline-block;
+  padding-right: 20rpx;
+  border-radius: 6rpx;
+  width:120rpx;
+  height: 120rpx;
+  position: relative;
+}
+.orders-item-Img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width:120rpx;
+  height: 120rpx;
+}
+.orderslist-empty{
+  position: absolute;
+  left: 50%;
+  top: 200rpx;
+  transform: translateX(-50%);
+}
+.err-btn{
+  width: 176rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  border-radius: 100rpx;
+  background: #fff;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  color: #332500;
+}
+.orderslist-noorder-img{
+  text-align: center;
+  width: 260rpx;
+  height: 260rpx;
+}
+.orderslist-noorder-text{
+  text-align: center;
+  width: 260rpx;
+  color: #332500;
+  font-size: 32rpx;
+}
+.err-btn::after{
+  border-radius: 100rpx;
+}
+
+
+/* 合并支付按钮  */
+.footer-btns{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 12;
+  width: 100%;
+  height: 130rpx;
+  line-height: 130rpx;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.pay-togeter{
+  background: #FF9C2B;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 8rpx;
+  font-size: 32rpx;
+}
+.order-list-nomore{
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+}

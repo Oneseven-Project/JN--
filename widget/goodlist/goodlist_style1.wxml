@@ -1,0 +1,55 @@
+<template name="goodlist_style1">
+  <wxs src="../../assets/wxs/price.wxs" module="price" />
+  <view style='width:100%' class='jn-goodlist-box'>
+    <block wx:for="{{goodlist}}" wx:for-index="idx" wx:key="goodItem.id" wx:for-item="goodItem">
+      <view class='goods-item jn-1px-b' bindtap='goDetail' data-item='{{goodItem}}'>
+        <view class='goods-item-imgs'>
+          <image src='{{goodItem.diy.picType == 1 ? (goodItem.diy.pic ? goodItem.diy.pic : "../../assets/imgs/fruit.jpg") : (goodItem.sku_img ? goodItem.sku_img : "../../assets/imgs/fruit.jpg")}}' class='goods-item-img' lazy-load binderror="bindErrImg" data-imgIndex="{{idx}}"></image>
+          <view class='goodlist-item-activity' wx:if="{{false}}">限购</view>
+          <view class='goodlist-item-saleOut' wx:if="{{goodItem.leaving_stock == 0}}">
+            <view class='goodlist-item-saleOut-textCN'>已售完</view>
+            <view class='goodlist-item-saleOut-textEN'>SALD OUT</view>
+          </view>
+        </view>
+        <view class='goods-item-info'>
+          <view class='good-item-title' wx:if="{{goodItem.sku_name}}">{{goodItem.sku_name}}</view>
+          <view class='good-item-title' wx:elif="{{!goodItem.sku_name}}">{{goodItem.diy.title}}</view>
+          <view class='good-item-subTitle'>{{goodItem.sku_brief}}</view>
+          <!-- <view class='good-item-infoDetail'>
+            <view class='good-item-origin' wx:if="{{goodItem.origin}}">
+              <text class="blockItem">{{goodItem.origin}}</text>
+              <text class="blockItem gray">产地</text>
+            </view>
+            <view class='good-item-line' wx:if="{{goodItem.unit_price && goodItem.origin}}"></view>
+            <view class='good-item-unitPrice {{goodItem.origin ? "" :  "good-item-unitPrice-noMargin"}}' wx:if="{{goodItem.unit_price}}">
+              <text class="blockItem">约￥{{goodItem.unit_price}}/{{goodItem.unit_type}}</text>
+              <text class="blockItem gray">单价</text>
+            </view>
+          </view> -->
+          <view class='good-item-price'>
+            <text class='good-item-price-icon'>￥</text>
+            <text class='good-item-price-num'>{{price.priceFix(goodItem.sale_price).intNum}}.</text>
+            <text class='good-item-price-icon'>{{price.priceFix(goodItem.sale_price).floatNum}}</text>
+            <text class="good-item-price-origin">￥{{price.priceFix(goodItem.purchase_price).allNum}}</text>
+            <view class='good-item-addCart'>
+
+              <text class='iconfont icon-Raido_Disable good-item-btn' catchtap='cartAdd' data-item='{{goodItem}}' wx:if="{{goodItem.leaving_stock > 0}}">
+                <text class='iconfont icon-Plus good-item-btnPlus'></text>
+              </text>
+
+              <text class='iconfont icon-Raido_Disable good-item-btn-disable' wx:if="{{goodItem.leaving_stock == 0}}" catchtap>
+                <text class='iconfont icon-Plus good-item-btnPlus-disable'></text>
+              </text>
+
+              <text class='good-item-btn good-item-num' wx:if='{{flase}}'>2</text>
+              <text class='iconfont icon-Raido_Normal good-item-btn good-item-cirlcleSub' wx:if='{{flase}}'>
+                <text class='iconfont icon-Sub good-item-btnSub'></text>
+              </text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <jn-cart class="goodlist-cart" wx:if="{{!isNoCart}}"></jn-cart>
+  </view>
+</template>

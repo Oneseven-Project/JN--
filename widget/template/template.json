@@ -1,0 +1,17 @@
+{
+  "component": true,
+  "usingComponents": {
+    "jn-template": "/widget/template/template",
+    "jn-banner": "/widget/banner/banner",
+    "jn-showcase": "/widget/showcase/showcase",
+    "jn-icon": "/widget/icon/icon",
+    "jn-goodlist": "/widget/goodlist/goodlist",
+    "jn-swiper": "/widget/swiper/swiper",
+    "jn-timer": "/widget/timer/timer",
+    "jn-top-nav": "/widget/topNav/topNav",
+    "jn-tab": "/widget/jntab/jntab",
+    "jn-store": "/widget/store/store",
+    "jn-repacket": "/widget/jn-redpacket/jn-redpacket",
+    "jn-coupon-list": "/widget/couponlist/couponlist"
+  }
+}

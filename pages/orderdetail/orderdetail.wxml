@@ -1,0 +1,91 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+<wxs src="../../assets/wxs/phonenum.wxs" module="phone" />
+<view class='order-detail jn-1px-t {{"page-had-padding"}}'>
+  <view class='order-status'>
+    <view class='order-status-left'>
+      <view class='order-status-text {{orderInfo.order_status == 10 ? "text-red" : ""}}'>
+        <text>{{orderInfo.order_status_desc}}</text>
+        <text class='order-pay-money' wx:if="{{orderInfo.order_status == 10}}">￥{{orderInfo.payable_amt}}</text>
+      </view>
+      <view class='order-status-lefttime' wx:if="{{orderInfo.order_status == 10}}">
+        <text>请在</text>
+        <!-- <count-dowm isDown="{{1}}" time="{{orderInfo.cancel_time}}" bind:refresh="timeOut" class="countdown-text"></count-dowm> -->
+        <text class='order-cancel-text'> {{orderInfo.cancel_time}} </text>
+        <text>前完成支付，否则订单将自动取消</text> 
+      </view>
+      <view class='order-status-des'>{{orderDes}}</view>
+    </view>
+    <view class='order-status-right'>
+      <image src='{{orderStatusImg}}' class='order-img-status'></image>
+    </view>
+  </view>
+
+
+  <view class='order-man-info jn-1px-t'>
+    <view class='order-man-des'>
+      <text class='order-man-name'>{{orderInfo.user_addr.name}}</text>
+      <text class='order-man-phone'>{{phone.phone(orderInfo.user_addr.phone)}}</text>
+    </view>
+    <view class='order-man-adress'>{{orderInfo.user_addr.full_addr}}</view>
+  </view>
+
+  <view class='order-send-time' wx:if="{{false}}">
+    <view class='order-send-text'>预计送达时间</view> 
+    <view class='order-send-time-text'>2018年1月1日</view>
+  </view>
+
+  <view class='order-goodlist'>
+    <view class='order-goodlist-head jn-1px-b'>购买商品</view>
+    <view class='order-goods'>
+      <block wx:for="{{orderInfo.goods}}" wx:key="idx" wx:for-item="good" wx:for-index="idx">
+        <view class='order-good-item jn-1px-b' bindtap='toDetail' data-item='{{good}}'>
+          <view class='order-good-imgbox'>
+            <image src='{{good.sku_img ? good.sku_img : "../../assets/imgs/fruit.jpg"}}' class='order-good-img'></image>
+          </view>
+          <view class='order-good-info'>
+            <view class='good-title'>{{good.product_name}}</view>
+            <view class='good-subtitle'>{{good.sku_name}}</view>
+            <view class='good-num-price'>
+              <view class='good-price'>￥{{good.sale_price}}</view>
+              <view class="good-num">
+                <text class='good-num-icon'>×</text> 
+                <text>{{good.quantity}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class='order-info'>
+    <view class='order-info-item'>
+      <view class='order-info-key'>订单编号</view>
+      <view class='order-info-value'>{{orderInfo.order_sn}}</view>
+    </view>
+    <view class='order-info-item'>
+      <view class='order-info-key'>下单时间</view>
+      <view class='order-info-value'>{{orderInfo.create_time}}</view>
+    </view>
+    <view class='order-info-item'>
+      <view class='order-info-key'>支付方式</view>
+      <view class='order-info-value'>微信</view>
+    </view>
+    <view class='order-info-item'>
+      <view class='order-info-key'>支付时间</view>
+      <view class='order-info-value'>{{orderInfo.pay_time}}</view>
+    </view>
+  </view>
+
+  <view class='order-footer jn-1px-t'>
+    <view class='order-footer-btn' wx:if="{{orderInfo.can_buy_again}}" bindtap='buyAgain'>再次购买</view>  
+    <view class='order-footer-btn order-footer-btn-topay' wx:if="{{orderInfo.can_pay}}" bindtap='toPay'>
+      <text>去付款</text>
+      <!-- <count-dowm isDown="{{1}}" time="{{orderInfo.cancel_time}}"></count-dowm> -->
+    </view>
+    <view class='order-footer-btn' bindtap='cancleOrder' wx:if="{{orderInfo.can_cancel}}">取消订单</view>
+    <view class='order-footer-btn' bindtap='signFor' wx:if="{{orderInfo.can_receive}}">签收</view>
+  </view>
+</view>
+<jn-toast class="toast" text="{{toastText}}" ></jn-toast>
+<jn-model bindtouchmove catchtouchmove="handleStart" class="jn-model" option="{{modelOption}}" addressInfo="{{addressInfo}}"></jn-model>

@@ -1,0 +1,13 @@
+var flex = function (col) {
+  if (col !== '') {
+    var css = 'display:flex;'
+    css += 'flex-direction:' + (col == 6 ? 'row' : 'column') + ';'
+    css += 'flex:' + (col == 6 ? 'auto' : col || 'auto') + ';'
+    return css
+  } else {
+    return ''
+  }
+}
+module.exports = {
+  flex: flex
+}

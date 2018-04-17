@@ -1,0 +1,23 @@
+<!--widget/goodlist/goodlist.wxml-->
+<import src="goodlist_style1.wxml"/>
+<import src="goodlist_style2.wxml"/>
+
+<view class='jn-goodlist' wx:if="{{goodlist && goodlist.length > 0}}">
+  <view class='goods-list-tabs' wx:if="{{item && item.style == 3 || item && item.style == 4}}">
+    <block wx:for="{{tabList}}" wx:key="idx" wx:for-index="idx" wx:for-item="tab">
+      <view class='goods-list-tabItem {{activeIdx == idx ? "activeTab" : ""}}' data-index="{{idx}}" bindtap='tabClick'>{{tab.name}}</view>
+    </block>
+  </view>
+
+  <view class='goodlist-main-title' wx:if="{{item.conf && item.conf.title}}">
+    <view class='goodlist-main-title-text' wx:if="{{item.conf && item.conf.title}}">{{item.conf.title}}</view>
+    <view class='goodlist-main-sub-text' wx:if="{{item.conf && item.conf.sub}}">{{item.conf.sub}}</view>
+  </view>
+  
+  <view class='goodlist'>
+    <template is="goodlist_style2" data="{{goodlist,isNoCart}}" wx:if="{{item && item.style == 2 ||item && item.style == 4 }}"/>  
+    <template is="goodlist_style1" data="{{goodlist,isNoCart}}" wx:else/>
+  </view>
+
+  <jn-toast class="toast" text="{{toastText}}" ></jn-toast>
+</view>

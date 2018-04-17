@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "jn-toast": "/widget/toast/toast",
+    "count-dowm": "/widget/countdown/countdown",
+    "jn-model": "/widget/showmodel/showmodel"
+  }
+}

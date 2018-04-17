@@ -1,0 +1,34 @@
+<!--widget/showmodel/showmodel.wxml-->
+<view wx:if="{{isShow}}" class='jn-model' catchtouchmove>
+</view>
+  <view class='jn-model-box' wx:if="{{isShow}}">
+    <view class='jn-model-heade' catchtouchmove>
+      <text>{{option.title ? option.title : '请注意以下商品有变动'}}</text>
+    </view>
+    <scroll-view class='jn-model-content' scroll-y catchtouchmove>
+      <block wx:for="{{option.list}}" wx:key="idx" wx:for-index="idx" wx:for-item="good">
+        <view class='good-list {{idx !== list.length-1 ? "jn-1px-b": ""}}'>
+          <view class='good-list-imgbox'>
+            <image src='{{good.sku_img ? good.sku_img  : "../../assets/imgs/fruit.jpg"}}' class='good-list-img' lazy-load="{{true}}"></image>
+          </view>
+          <view class='good-list-goodinfo'>
+            <view class='good-title'>
+              <view class='good-title-name'>{{good.spu_name}}{{good.sku_name}}</view>
+              <view class='good-good-saleout' wx:if="{{option.resp_type == 2 || option.resp_type == 3}}">售罄</view>
+              <view class='good-good-num' wx:else>×  {{good.quantity}}</view>
+            </view>
+            <view class='good-price'>
+              <text class='{{option.resp_type == 5 ? "good-price-old" : ""}}'>￥{{good.sku_old_price ? good.sku_old_price : good.sale_price}}</text>
+              <text class='good-price-new' wx:if="{{good.sku_old_price}}">￥{{good.sale_price}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class='jn-model-foot jn-1px-t' catchtouchmove>
+        <block>
+          <view class='jn-model-btn jn-1px-r' catchtap='hide'>{{option.btn1 ? option.btn1 : '返回购物车'}}</view>
+          <view class='jn-model-btn' catchtap='btn2'>{{option.btn2 ? option.btn2 : '继续结算'}}</view>
+        </block>  
+    </view>
+  </view>

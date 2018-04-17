@@ -1,0 +1,86 @@
+/* pages/cityChoose/cityChoose.wxss */
+.city-bg-gray{
+  background: #fafafa;
+  text-indent: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+  height: 64rpx;
+  line-height: 64rpx;
+}
+.city-current-location{
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  height: 94rpx;
+  line-height: 94rpx;
+}
+.city-current-icon{
+  color: #FF9C2B;
+  font-size: 32rpx;
+}
+.city-current-location{
+  font-size: 32rpx;
+  color: #332500;
+}
+.city-current-reload{
+  float: right;
+  font-size: 28rpx;
+  color: #999;
+}
+.city-current-city{
+  margin-left: 20rpx;
+}
+.city-current-loading{
+  color: #999;
+  margin-left: 20rpx;
+}
+/* 收货地址  */
+.city-shipping-Address{
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.city-my{
+  font-size: 32rpx;
+  color: #332500;
+  padding: 20rpx 0;
+}
+.city-my-phone{
+  margin-left: 20rpx;
+}
+.city-my-address{
+  color: #999;
+  font-size: 24rpx;
+}
+.city-had{
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.city-had::after{
+  clear: both;
+}
+.city-had-citys{
+  width: 100%;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #332500;
+  font-size: 32rpx;
+  float: left;
+  box-sizing: border-box;
+}
+.city-more{
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.city-img-loaction{
+  width: 20rpx;
+  height: 24rpx;
+}
+.city-img-refresh{
+  float: right;
+  width: 28rpx;
+  height: 28rpx;
+  margin-top: 33rpx;
+}
